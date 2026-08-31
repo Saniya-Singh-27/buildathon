@@ -1,11 +1,17 @@
-"""Custom CSS for the app. Kept in one place so main.py stays readable."""
+"""Custom CSS for the app. Kept in one place so main.py stays readable.
+
+Theme is forced to dark via .streamlit/config.toml so rendering is
+consistent regardless of the viewer's OS/browser preference. Every
+custom element below sets its own `color` explicitly rather than
+inheriting - that's what caused invisible white-on-white text before.
+"""
 
 CUSTOM_CSS = """
 <style>
     #MainMenu, footer, header {visibility: hidden;}
 
     .stApp {
-        background: linear-gradient(160deg, #fff0f6 0%, #f3e8ff 50%, #e8f0ff 100%);
+        background: linear-gradient(160deg, #120c1e 0%, #1a1030 50%, #0f1a2e 100%);
     }
 
     .block-container {
@@ -25,23 +31,29 @@ CUSTOM_CSS = """
 
     .subtitle {
         text-align: center;
-        color: #6b6b6b;
+        color: #b9aed6;
         font-size: 1.05rem;
         margin-top: 0.3rem;
         margin-bottom: 2rem;
     }
 
     .card {
-        background: white;
+        background: #1e1631;
+        border: 1px solid rgba(255, 77, 141, 0.18);
         border-radius: 18px;
         padding: 1.6rem 1.8rem;
-        box-shadow: 0 8px 24px rgba(168, 85, 247, 0.10);
+        box-shadow: 0 8px 24px rgba(168, 85, 247, 0.18);
         margin-bottom: 1.2rem;
+        color: #f2ecff;
+    }
+
+    .card strong, .card p, .card label {
+        color: #f2ecff;
     }
 
     .or-divider {
         text-align: center;
-        color: #b8a8c8;
+        color: #8f7fb8;
         font-weight: 700;
         margin: 1.2rem 0;
         letter-spacing: 2px;
@@ -51,12 +63,21 @@ CUSTOM_CSS = """
         border-radius: 999px;
         font-weight: 700;
         padding: 0.6rem 1.4rem;
-        border: none;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #f2ecff;
+        background: #2a2140;
     }
 
     div.stButton > button[kind="primary"] {
         background: linear-gradient(90deg, #ff4d8d, #a855f7);
         color: white;
+        border: none;
+    }
+
+    div.stButton > button:disabled {
+        color: #8f7fb8;
+        background: #201936;
+        border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .verdict-banner {
@@ -77,34 +98,45 @@ CUSTOM_CSS = """
         text-align: center;
         font-size: 2.2rem;
         font-weight: 800;
-        color: #1f1f1f;
+        color: #f2ecff;
         margin-bottom: 1rem;
     }
 
     .reason-item {
         font-size: 1.02rem;
         padding: 0.4rem 0;
+        color: #ded4f5;
     }
 
     .bestie-note {
-        background: #fdf2f8;
+        background: #2a1a2e;
         border-left: 4px solid #ff4d8d;
         border-radius: 10px;
         padding: 1rem 1.2rem;
         font-style: italic;
         font-size: 1.05rem;
         margin: 1rem 0 1.4rem 0;
+        color: #f5d9ea;
     }
 
     .placeholder-tag {
         display: inline-block;
-        background: #f3e8ff;
-        color: #7e22ce;
+        background: #3b1650;
+        color: #e6b3ff;
         font-size: 0.78rem;
         font-weight: 700;
         padding: 0.15rem 0.6rem;
         border-radius: 999px;
         margin-bottom: 0.8rem;
+    }
+
+    [data-testid="stFileUploaderDropzone"] {
+        background: #1e1631;
+        border: 1px dashed rgba(255, 77, 141, 0.35);
+    }
+
+    [data-testid="stCaptionContainer"], .stCaption, small {
+        color: #9c8fbf !important;
     }
 </style>
 """
