@@ -6,14 +6,20 @@ which job, so product_understanding.py (Phase 5) and the explanation
 layer (Phase 6) don't each reinvent this.
 
 Reads the key from the ANTHROPIC_API_KEY environment variable (the
-standard name the anthropic SDK looks for). If it isn't set, the AI
-features are simply unavailable and callers fall back to manual entry -
-nothing else in the app depends on this being configured.
+standard name the anthropic SDK looks for) - either already exported in
+the shell, or loaded here from a .env file in the project root. If it
+isn't set, the AI features are simply unavailable and callers fall back
+to manual entry - nothing else in the app depends on this being
+configured.
 """
 
 import os
+from pathlib import Path
 
 import anthropic
+from dotenv import load_dotenv
+
+load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
 # Vision needs a strong model to read a messy checkout screenshot reliably.
 VISION_MODEL = "claude-sonnet-5"
