@@ -40,14 +40,20 @@ def date_range(df: pd.DataFrame):
 
 
 def current_month_spend(df: pd.DataFrame, reference_date=None) -> float:
-    """Spend in the same calendar month as reference_date.
+    """Spend from the start of reference_date's month through reference_date itself.
 
     Defaults to the most recent date in the dataset rather than the
     real wall-clock date, so this keeps working correctly even if the
     dataset isn't regenerated on the exact day the app is demoed.
+    Deliberately excludes anything after reference_date - a "spent so
+    far this month" figure should never include the rest of the month.
     """
     reference_date = reference_date or df["date"].max()
-    mask = (df["date"].dt.year == reference_date.year) & (df["date"].dt.month == reference_date.month)
+    mask = (
+        (df["date"].dt.year == reference_date.year)
+        & (df["date"].dt.month == reference_date.month)
+        & (df["date"] <= reference_date)
+    )
     return float(df.loc[mask, "amount"].sum())
 
 
