@@ -37,17 +37,28 @@ CUSTOM_CSS = """
         margin-bottom: 2rem;
     }
 
-    .card {
+    /* Native st.container(border=True) boxes, styled as "cards".
+       Custom unsafe_allow_html <div> wrappers don't work for this in
+       Streamlit - a markdown-injected opening tag can't actually contain
+       widgets rendered after it, they end up as separate sibling
+       elements. Real bordered containers are the only reliable way.
+       Streamlit gives every st.container() this same test id, including
+       the implicit unbordered root block - that one gets the shared
+       "st-emotion-cache-0" no-op class, so it's excluded here to avoid
+       wrapping the entire page in a card. */
+    div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) {
         background: #1e1631;
-        border: 1px solid rgba(255, 77, 141, 0.18);
+        border: 1px solid rgba(255, 77, 141, 0.18) !important;
         border-radius: 18px;
-        padding: 1.6rem 1.8rem;
+        padding: 0.4rem 0.6rem;
         box-shadow: 0 8px 24px rgba(168, 85, 247, 0.18);
         margin-bottom: 1.2rem;
         color: #f2ecff;
     }
 
-    .card strong, .card p, .card label {
+    div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) strong,
+    div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) p,
+    div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) label {
         color: #f2ecff;
     }
 

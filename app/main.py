@@ -50,8 +50,7 @@ def render_home():
     except FileNotFoundError:
         st.warning("No transaction data found. Run `python3 data/generate_data.py` first.")
 
-    with st.container():
-        st.markdown('<div class="card">', unsafe_allow_html=True)
+    with st.container(border=True):
         st.markdown("**Upload what you're about to buy**")
         st.file_uploader(
             "Screenshot of the product or checkout page",
@@ -59,12 +58,10 @@ def render_home():
             label_visibility="collapsed",
         )
         st.caption("Screenshot understanding isn't wired up yet - it's coming in a later phase.")
-        st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown('<div class="or-divider">OR</div>', unsafe_allow_html=True)
 
-    with st.container():
-        st.markdown('<div class="card">', unsafe_allow_html=True)
+    with st.container(border=True):
         st.markdown("**Enter it yourself**")
         product_name = st.text_input("Product", placeholder="e.g. Black blazer")
         price = st.number_input("Price (INR)", min_value=0.0, step=50.0, format="%.2f")
@@ -81,7 +78,6 @@ def render_home():
                 st.session_state.price = price
                 go_to_result()
                 st.rerun()
-        st.markdown("</div>", unsafe_allow_html=True)
 
 
 def render_result():
@@ -101,15 +97,14 @@ def render_result():
         unsafe_allow_html=True,
     )
 
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown("**Why I'm saying this (placeholder reasons):**")
-    for reason in [
-        "This is dummy data - the real spending analysis isn't built yet",
-        "Once your transaction history is loaded, this will be a real calculation",
-        "The verdict logic (BUY / WAIT / DON'T BUY) arrives in Phase 4",
-    ]:
-        st.markdown(f'<div class="reason-item">• {reason}</div>', unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
+    with st.container(border=True):
+        st.markdown("**Why I'm saying this (placeholder reasons):**")
+        for reason in [
+            "This is dummy data - the real spending analysis isn't built yet",
+            "Once your transaction history is loaded, this will be a real calculation",
+            "The verdict logic (BUY / WAIT / DON'T BUY) arrives in Phase 4",
+        ]:
+            st.markdown(f'<div class="reason-item">• {reason}</div>', unsafe_allow_html=True)
 
     st.markdown(
         '<div class="bestie-note">"Not gonna lie, I\'m just a placeholder right now. '
