@@ -8,6 +8,7 @@ data, no decision engine, and no AI yet - those arrive in later phases.
 
 import streamlit as st
 
+from data_loader import load_transactions, summary
 from styles import CUSTOM_CSS
 
 st.set_page_config(page_title="Should I Buy This?", page_icon="💸", layout="centered")
@@ -37,6 +38,17 @@ def render_home():
         '<div class="subtitle">Your brutally honest, secretly supportive money friend.</div>',
         unsafe_allow_html=True,
     )
+
+    try:
+        df = load_transactions()
+        stats = summary(df)
+        st.caption(
+            f"Data check: {stats['transaction_count']} transactions loaded • "
+            f"Rs {stats['total_spent']:,.0f} total spend • "
+            f"Rs {stats['current_month_spend']:,.0f} spent this month"
+        )
+    except FileNotFoundError:
+        st.warning("No transaction data found. Run `python3 data/generate_data.py` first.")
 
     with st.container():
         st.markdown('<div class="card">', unsafe_allow_html=True)
