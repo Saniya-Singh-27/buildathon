@@ -1,25 +1,49 @@
 """
 Should I Buy This? - Streamlit app entrypoint.
 
-Phase 1 scope: landing screen with product/price input, and a placeholder
-verdict screen so the end-to-end click flow exists. There is no spending
-data, no decision engine, and no AI yet - those arrive in later phases.
+Phase 5 scope: real product input. A screenshot can be read by the AI
+(Claude vision) to pre-fill product name / price / category / discount,
+or the user can type them in directly; either way they land in the same
+form fields, with category auto-guessed by the AI when possible and a
+manual dropdown as the fallback. There is still no spending analysis or
+verdict shown yet - the result screen remains a placeholder until
+Phase 6 wires in the decision engine and AI explanation.
 """
+
+import sys
+from pathlib import Path
 
 import streamlit as st
 
 from data_loader import load_transactions, summary
+from ai_client import is_configured
+from product_understanding import categorize_product, extract_from_screenshot
 from styles import CUSTOM_CSS
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "data"))
+from config import CATEGORY_LABELS, CATEGORY_LIST  # noqa: E402
 
 st.set_page_config(page_title="Should I Buy This?", page_icon="💸", layout="centered")
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
-if "page" not in st.session_state:
-    st.session_state.page = "home"
-if "product_name" not in st.session_state:
-    st.session_state.product_name = ""
-if "price" not in st.session_state:
-    st.session_state.price = 0.0
+CATEGORY_PLACEHOLDER = "-- pick one --"
+CATEGORY_OPTIONS = [CATEGORY_PLACEHOLDER] + CATEGORY_LIST
+
+DEFAULTS = {
+    "page": "home",
+    "product_name": "",
+    "price": 0.0,
+    "category": None,
+    "discount_percentage": 0.0,
+    "product_name_input": "",
+    "price_input": 0.0,
+    "category_input": CATEGORY_PLACEHOLDER,
+    "discount_input": 0.0,
+    "screenshot_message": None,
+}
+for key, value in DEFAULTS.items():
+    if key not in st.session_state:
+        st.session_state[key] = value
 
 
 def go_to_result():
@@ -28,8 +52,42 @@ def go_to_result():
 
 def go_home():
     st.session_state.page = "home"
-    st.session_state.product_name = ""
-    st.session_state.price = 0.0
+    for key, value in DEFAULTS.items():
+        st.session_state[key] = value
+
+
+def _analyze_screenshot():
+    uploaded = st.session_state.get("screenshot_upload")
+    if uploaded is None:
+        st.session_state.screenshot_message = ("warning", "Upload an image first.")
+        return
+    if not (uploaded.type or "").startswith("image/"):
+        st.session_state.screenshot_message = ("warning", "That doesn't look like an image file.")
+        return
+    if not is_configured():
+        st.session_state.screenshot_message = (
+            "warning",
+            "AI screenshot reading isn't configured (no ANTHROPIC_API_KEY set) - enter the details manually below.",
+        )
+        return
+
+    result = extract_from_screenshot(uploaded.getvalue(), uploaded.type or "image/png")
+    if result is None:
+        st.session_state.screenshot_message = (
+            "warning",
+            "Couldn't confidently read that screenshot - enter the details manually below.",
+        )
+        return
+
+    st.session_state.product_name_input = result["product_name"]
+    st.session_state.price_input = result["price"]
+    if result["category"] in CATEGORY_LIST:
+        st.session_state.category_input = result["category"]
+    st.session_state.discount_input = result.get("discount_percentage") or 0.0
+    st.session_state.screenshot_message = (
+        "success",
+        "Got it - filled in the details below from your screenshot. Double check them before judging.",
+    )
 
 
 def render_home():
@@ -56,28 +114,58 @@ def render_home():
             "Screenshot of the product or checkout page",
             type=["png", "jpg", "jpeg"],
             label_visibility="collapsed",
+            key="screenshot_upload",
         )
-        st.caption("Screenshot understanding isn't wired up yet - it's coming in a later phase.")
+        st.button("Analyze Screenshot", on_click=_analyze_screenshot)
+
+        level, text = st.session_state.screenshot_message or (None, None)
+        if level == "success":
+            st.success(text)
+        elif level == "warning":
+            st.warning(text)
+        st.caption("Uses Claude's vision model - falls back to manual entry if no API key is set.")
 
     st.markdown('<div class="or-divider">OR</div>', unsafe_allow_html=True)
 
     with st.container(border=True):
         st.markdown("**Enter it yourself**")
-        product_name = st.text_input("Product", placeholder="e.g. Black blazer")
-        price = st.number_input("Price (INR)", min_value=0.0, step=50.0, format="%.2f")
+        st.text_input("Product", placeholder="e.g. Black blazer", key="product_name_input")
+        st.number_input("Price (INR)", min_value=0.0, step=50.0, format="%.2f", key="price_input")
+        st.selectbox(
+            "Category",
+            CATEGORY_OPTIONS,
+            key="category_input",
+            format_func=lambda c: CATEGORY_LABELS.get(c, c) if c != CATEGORY_PLACEHOLDER else c,
+        )
+        st.number_input(
+            "Discount % (optional)", min_value=0.0, max_value=100.0, step=5.0, key="discount_input"
+        )
 
         judge_clicked = st.button("JUDGE ME", type="primary", use_container_width=True)
 
         if judge_clicked:
-            if not product_name.strip():
+            product_name = st.session_state.product_name_input.strip()
+            price = st.session_state.price_input
+            category = st.session_state.category_input
+
+            if not product_name:
                 st.warning("Tell me what you're buying first.")
             elif price <= 0:
                 st.warning("That price can't be real. Try again.")
             else:
-                st.session_state.product_name = product_name.strip()
-                st.session_state.price = price
-                go_to_result()
-                st.rerun()
+                if category == CATEGORY_PLACEHOLDER:
+                    guessed = categorize_product(product_name)
+                    category = guessed
+
+                if category not in CATEGORY_LIST:
+                    st.warning("Couldn't guess a category automatically - please pick one from the list.")
+                else:
+                    st.session_state.product_name = product_name
+                    st.session_state.price = price
+                    st.session_state.category = category
+                    st.session_state.discount_percentage = st.session_state.discount_input
+                    go_to_result()
+                    st.rerun()
 
 
 def render_result():
@@ -96,13 +184,17 @@ def render_result():
         f'₹{st.session_state.price:,.2f}</div>',
         unsafe_allow_html=True,
     )
+    category_label = CATEGORY_LABELS.get(st.session_state.category, st.session_state.category)
+    discount = st.session_state.discount_percentage
+    discount_text = f" • {discount:.0f}% off" if discount else ""
+    st.caption(f"Category: {category_label}{discount_text}")
 
     with st.container(border=True):
         st.markdown("**Why I'm saying this (placeholder reasons):**")
         for reason in [
             "This is dummy data - the real spending analysis isn't built yet",
-            "Once your transaction history is loaded, this will be a real calculation",
-            "The verdict logic (BUY / WAIT / DON'T BUY) arrives in Phase 4",
+            "Category and price are now captured for real (Phase 5) - the verdict logic isn't",
+            "The verdict logic (BUY / WAIT / DON'T BUY) arrives in Phase 4/6 wiring",
         ]:
             st.markdown(f'<div class="reason-item">• {reason}</div>', unsafe_allow_html=True)
 
