@@ -2,7 +2,7 @@
 Should I Buy This? - Streamlit app entrypoint.
 
 Phase 5 scope: real product input. A screenshot can be read by the AI
-(Claude vision) to pre-fill product name / price / category / discount,
+(Gemini vision) to pre-fill product name / price / category / discount,
 or the user can type them in directly; either way they land in the same
 form fields, with category auto-guessed by the AI when possible and a
 manual dropdown as the fallback. There is still no spending analysis or
@@ -67,7 +67,7 @@ def _analyze_screenshot():
     if not is_configured():
         st.session_state.screenshot_message = (
             "warning",
-            "AI screenshot reading isn't configured (no ANTHROPIC_API_KEY set) - enter the details manually below.",
+            "AI screenshot reading isn't configured (no GEMINI_API_KEY set) - enter the details manually below.",
         )
         return
 
@@ -123,7 +123,7 @@ def render_home():
             st.success(text)
         elif level == "warning":
             st.warning(text)
-        st.caption("Uses Claude's vision model - falls back to manual entry if no API key is set.")
+        st.caption("Uses Gemini's vision model - falls back to manual entry if no API key is set.")
 
     st.markdown('<div class="or-divider">OR</div>', unsafe_allow_html=True)
 

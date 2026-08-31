@@ -1,5 +1,5 @@
 streamlit==1.38.0
 pandas==2.2.2
 numpy==1.26.4
-anthropic==1.2.0
+google-genai==2.20.0
 python-dotenv==1.0.1
