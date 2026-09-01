@@ -14,6 +14,21 @@ CUSTOM_CSS = """
         background: linear-gradient(160deg, #120c1e 0%, #1a1030 50%, #0f1a2e 100%);
     }
 
+    /* Headings and body text are set explicitly rather than left to the
+       theme. Streamlit resolves .streamlit/config.toml against the working
+       directory, so anything relying on the configured textColor renders
+       with the LIGHT default the moment the app is launched from somewhere
+       else - which is exactly how section headings ended up near-black on
+       a near-black background. Same lesson as the original invisible-text
+       bug: never let a colour depend on inheritance we don't control. */
+    h1, h2, h3, h4, h5, h6 {
+        color: #f2ecff !important;
+    }
+
+    .stApp, .stApp p, .stApp li, .stApp span, .stMarkdown {
+        color: #f2ecff;
+    }
+
     .block-container {
         padding-top: 2.5rem;
         max-width: 760px;
@@ -60,6 +75,16 @@ CUSTOM_CSS = """
     div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) p,
     div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) label {
         color: #f2ecff;
+    }
+
+    /* Inputs sit inside cards that share their background colour, so
+       without an explicit fill + hairline they have no visible edge. */
+    [data-testid="stTextInput"] > div,
+    [data-testid="stNumberInput"] > div,
+    [data-testid="stSelectbox"] > div {
+        background: #171029 !important;
+        border: 1px solid rgba(255, 255, 255, 0.14) !important;
+        border-radius: 10px;
     }
 
     .or-divider {
@@ -128,6 +153,86 @@ CUSTOM_CSS = """
         font-size: 1.05rem;
         margin: 1rem 0 1.4rem 0;
         color: #f5d9ea;
+    }
+
+    /* --- charts -------------------------------------------------------
+       Bars are capped well under the 24px mark ceiling, with a 4px
+       rounded data-end and a square baseline edge, and rows are spaced
+       so touching marks never need a border to separate them. */
+    .viz-chart {
+        margin: 0.4rem 0 1rem 0;
+    }
+
+    .viz-row {
+        display: grid;
+        grid-template-columns: 8.5rem 1fr 6rem;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.28rem 0;
+    }
+
+    .viz-label {
+        color: #ded4f5;
+        font-size: 0.92rem;
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .viz-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0 4px 4px 0;
+        height: 14px;
+    }
+
+    .viz-bar {
+        height: 14px;
+        border-radius: 0 4px 4px 0;
+        min-width: 2px;
+    }
+
+    .viz-value {
+        color: #f2ecff;
+        font-size: 0.88rem;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+    }
+
+    /* --- stat tiles ---------------------------------------------------- */
+    .stat-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.75rem;
+        margin: 0.5rem 0 1.6rem 0;
+    }
+
+    .stat-tile {
+        background: #1e1631;
+        border: 1px solid rgba(255, 77, 141, 0.18);
+        border-radius: 14px;
+        padding: 0.9rem 1rem;
+    }
+
+    .stat-label {
+        color: #9c8fbf;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+    }
+
+    .stat-value {
+        color: #f2ecff;
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-top: 0.2rem;
+    }
+
+    .stat-note {
+        color: #8f7fb8;
+        font-size: 0.76rem;
+        margin-top: 0.15rem;
     }
 
     .test-badge {

@@ -18,6 +18,7 @@ import streamlit as st
 import database
 import payments
 from ai_client import is_configured
+from dashboard import render_dashboard
 from ai_explanation import explain
 from data_loader import load_transactions, summary
 from decision_engine import decide
@@ -104,6 +105,30 @@ def go_home():
     st.session_state.page = "home"
     for key, value in DEFAULTS.items():
         st.session_state[key] = value
+
+
+def go_to_dashboard():
+    st.session_state.page = "dashboard"
+
+
+def render_nav():
+    """Two-way nav between checking a purchase and the dashboard."""
+    left, right = st.columns(2)
+    on_dashboard = st.session_state.page == "dashboard"
+    with left:
+        st.button(
+            "Should I buy this?",
+            use_container_width=True,
+            type="secondary" if on_dashboard else "primary",
+            on_click=go_home,
+        )
+    with right:
+        st.button(
+            "My dashboard",
+            use_container_width=True,
+            type="primary" if on_dashboard else "secondary",
+            on_click=go_to_dashboard,
+        )
 
 
 def _analyze_screenshot():
@@ -385,7 +410,16 @@ def render_result():
     st.button("← Judge something else", on_click=go_home)
 
 
-if st.session_state.page == "home":
+render_nav()
+
+if st.session_state.page == "dashboard":
+    render_dashboard(
+        monthly_budget=MONTHLY_BUDGET,
+        discretionary_budget=DISCRETIONARY_BUDGET,
+        essential_categories=ESSENTIAL_CATEGORIES,
+        category_labels=CATEGORY_LABELS,
+    )
+elif st.session_state.page == "home":
     render_home()
 else:
     render_result()
