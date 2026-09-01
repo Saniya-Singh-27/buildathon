@@ -172,6 +172,7 @@ def analyze_purchase(
         "as_of": reference_date.strftime("%Y-%m-%d"),
         "monthly_budget": monthly_budget,
         "discretionary_budget": discretionary_budget,
+        "is_essential_category": category in essential_categories,
         "current_month_total_spend": current_month_spend(df, reference_date),
         "remaining_discretionary_budget": round(remaining_budget, 2),
         "budget_already_exhausted": remaining_budget <= 0,

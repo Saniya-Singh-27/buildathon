@@ -1,645 +1,600 @@
 date,merchant,category,amount,payment_method
-2026-06-02 12:13:00,Swiggy,food_delivery,70,Credit Card
-2026-06-02 16:09:00,Mamaearth,beauty,171,Credit Card
-2026-06-02 20:05:00,Nykaa,beauty,419,Debit Card
-2026-06-02 22:39:00,Myntra,clothing,823,UPI
-2026-06-02 22:53:00,Ola,transportation,68,UPI
-2026-06-03 08:13:00,Zomato,food_delivery,87,UPI
-2026-06-03 09:45:00,Nykaa,beauty,362,Credit Card
 2026-06-03 10:45:00,Netflix,subscriptions,649,Credit Card
-2026-06-03 15:41:00,Swiggy,food_delivery,116,Credit Card
-2026-06-03 16:14:00,The Body Shop,beauty,219,Credit Card
-2026-06-03 16:35:00,Uber,transportation,67,UPI
-2026-06-04 09:42:00,Zomato,food_delivery,110,UPI
-2026-06-04 10:01:00,Rapido,transportation,126,Credit Card
-2026-06-04 10:22:00,Zomato,food_delivery,108,UPI
-2026-06-04 10:34:00,Mamaearth,beauty,387,Credit Card
-2026-06-04 13:20:00,Namma Metro,transportation,47,Net Banking
-2026-06-04 14:15:00,BigBasket,groceries,281,Net Banking
-2026-06-04 18:11:00,Blinkit,groceries,208,UPI
-2026-06-04 18:43:00,Blinkit,groceries,207,UPI
-2026-06-05 12:39:00,BookMyShow,entertainment,136,Credit Card
-2026-06-05 14:20:00,Zomato,food_delivery,134,Credit Card
+2026-06-03 12:13:00,Swiggy,food_delivery,70,Credit Card
+2026-06-03 16:09:00,Mamaearth,beauty,171,Credit Card
+2026-06-03 20:05:00,Nykaa,beauty,419,Debit Card
+2026-06-03 22:39:00,Myntra,clothing,823,UPI
+2026-06-03 22:53:00,Ola,transportation,68,UPI
+2026-06-04 08:13:00,Zomato,food_delivery,87,UPI
+2026-06-04 09:45:00,Nykaa,beauty,362,Credit Card
+2026-06-04 15:41:00,Swiggy,food_delivery,116,Credit Card
+2026-06-04 16:14:00,The Body Shop,beauty,219,Credit Card
+2026-06-04 16:35:00,Uber,transportation,67,UPI
+2026-06-05 09:42:00,Zomato,food_delivery,110,UPI
+2026-06-05 10:01:00,Rapido,transportation,126,Credit Card
+2026-06-05 10:22:00,Zomato,food_delivery,108,UPI
+2026-06-05 10:34:00,Mamaearth,beauty,387,Credit Card
+2026-06-05 13:20:00,Namma Metro,transportation,47,Net Banking
+2026-06-05 14:15:00,BigBasket,groceries,281,Net Banking
 2026-06-05 16:25:00,Spotify Premium,subscriptions,119,Credit Card
-2026-06-06 10:18:00,Zepto,groceries,235,Credit Card
-2026-06-06 11:08:00,Instamart,groceries,92,UPI
-2026-06-06 12:01:00,Domino's,food_delivery,94,Debit Card
-2026-06-06 18:28:00,Nykaa,beauty,312,UPI
-2026-06-06 22:31:00,The Body Shop,beauty,365,UPI
-2026-06-06 22:45:00,Zomato,food_delivery,104,UPI
-2026-06-07 01:03:00,Zomato,food_delivery,77,UPI
-2026-06-07 08:11:00,Behrouz Biryani,food_delivery,100,UPI
-2026-06-07 10:52:00,H&M,clothing,989,Credit Card
-2026-06-07 14:07:00,Indian Oil Petrol Pump,transportation,52,Debit Card
-2026-06-07 16:50:00,Namma Metro,transportation,59,Credit Card
-2026-06-07 21:05:00,Ola,transportation,72,Credit Card
-2026-06-07 21:27:00,Blinkit,groceries,225,Credit Card
-2026-06-07 22:07:00,Zomato,food_delivery,70,UPI
-2026-06-07 22:25:00,Ola,transportation,83,UPI
-2026-06-08 00:52:00,Behrouz Biryani,food_delivery,119,Credit Card
+2026-06-05 18:11:00,Blinkit,groceries,208,UPI
+2026-06-05 18:43:00,Blinkit,groceries,207,UPI
+2026-06-06 09:39:00,Uber,transportation,82,Debit Card
+2026-06-06 20:15:00,INOX,entertainment,199,UPI
+2026-06-06 22:17:00,Box8,food_delivery,99,Credit Card
+2026-06-06 22:56:00,Behrouz Biryani,food_delivery,99,UPI
+2026-06-07 00:30:00,Behrouz Biryani,food_delivery,139,UPI
+2026-06-07 08:18:00,Swiggy,food_delivery,96,Debit Card
+2026-06-07 09:07:00,PVR Cinemas,entertainment,246,Credit Card
+2026-06-07 10:17:00,BigBasket,groceries,96,Net Banking
+2026-06-07 12:06:00,Ola,transportation,113,Debit Card
+2026-06-08 01:21:00,Zomato,food_delivery,72,Debit Card
+2026-06-08 08:55:00,Rapido,transportation,63,UPI
 2026-06-08 10:41:00,iCloud+,subscriptions,75,Credit Card
-2026-06-08 10:55:00,Cult.fit,fitness,438,Debit Card
-2026-06-08 12:26:00,Ola,transportation,128,UPI
-2026-06-08 13:31:00,BigBasket,groceries,155,Credit Card
-2026-06-08 17:07:00,DMart,groceries,197,UPI
-2026-06-08 17:42:00,Uber,transportation,49,UPI
-2026-06-08 19:39:00,Mamaearth,beauty,148,Debit Card
-2026-06-09 00:01:00,Zomato,food_delivery,72,UPI
-2026-06-09 08:47:00,Behrouz Biryani,food_delivery,99,UPI
-2026-06-09 11:55:00,Behrouz Biryani,food_delivery,77,UPI
-2026-06-09 19:50:00,PVR Cinemas,entertainment,313,UPI
-2026-06-09 21:05:00,H&M,clothing,571,Debit Card
-2026-06-10 11:35:00,Sephora,beauty,167,UPI
-2026-06-10 14:40:00,Instamart,groceries,191,UPI
-2026-06-10 20:31:00,DMart,groceries,130,UPI
-2026-06-10 22:34:00,Blinkit,groceries,320,Credit Card
-2026-06-11 11:47:00,Blinkit,groceries,265,UPI
-2026-06-11 12:02:00,Uber,transportation,108,Credit Card
-2026-06-11 14:22:00,Ajio,clothing,481,Credit Card
-2026-06-11 22:45:00,Box8,food_delivery,132,UPI
-2026-06-12 11:35:00,Zepto,groceries,218,Debit Card
+2026-06-08 12:57:00,Domino's,food_delivery,81,UPI
+2026-06-08 18:48:00,BigBasket,groceries,295,UPI
+2026-06-08 19:34:00,Steam,entertainment,252,UPI
+2026-06-08 20:06:00,Indian Oil Petrol Pump,transportation,96,UPI
+2026-06-08 22:01:00,Behrouz Biryani,food_delivery,76,UPI
+2026-06-08 22:17:00,BigBasket,groceries,194,UPI
+2026-06-08 22:56:00,Ola,transportation,65,UPI
+2026-06-09 01:19:00,Swiggy,food_delivery,117,Credit Card
+2026-06-09 10:16:00,Blinkit,groceries,139,UPI
+2026-06-09 10:18:00,Ola,transportation,121,UPI
+2026-06-09 12:24:00,Zepto,groceries,249,UPI
+2026-06-09 17:16:00,Nykaa,beauty,513,UPI
+2026-06-09 22:06:00,Domino's,food_delivery,112,UPI
+2026-06-09 22:49:00,Domino's,food_delivery,63,Credit Card
+2026-06-10 00:33:00,Zomato,food_delivery,77,UPI
+2026-06-10 17:03:00,Ajio,clothing,456,UPI
+2026-06-10 20:37:00,IRCTC,travel,1083,Credit Card
+2026-06-10 20:49:00,Instamart,groceries,118,Debit Card
+2026-06-10 22:50:00,Box8,food_delivery,95,UPI
+2026-06-10 23:05:00,Zomato,food_delivery,94,UPI
+2026-06-11 11:29:00,Uber,transportation,103,UPI
+2026-06-11 12:56:00,Steam,entertainment,213,Credit Card
+2026-06-11 17:42:00,Indian Oil Petrol Pump,transportation,48,UPI
+2026-06-11 19:37:00,Instamart,groceries,229,UPI
+2026-06-11 19:55:00,Uber,transportation,66,Debit Card
+2026-06-12 01:28:00,Swiggy,food_delivery,103,Credit Card
+2026-06-12 01:46:00,Box8,food_delivery,114,UPI
+2026-06-12 08:42:00,Ajio,clothing,969,Net Banking
+2026-06-12 10:00:00,Uber,transportation,89,UPI
+2026-06-12 14:17:00,Domino's,food_delivery,90,UPI
 2026-06-12 14:50:00,Amazon Prime,subscriptions,299,Credit Card
-2026-06-12 15:36:00,Indian Oil Petrol Pump,transportation,48,UPI
-2026-06-12 16:40:00,Uber,transportation,80,Credit Card
-2026-06-12 19:54:00,Rapido,transportation,116,UPI
-2026-06-12 22:56:00,Blinkit,groceries,131,Debit Card
-2026-06-13 08:25:00,Nykaa,beauty,155,Debit Card
-2026-06-13 14:07:00,Zepto,groceries,190,Credit Card
-2026-06-13 17:28:00,DMart,groceries,311,UPI
-2026-06-13 18:43:00,Ola,transportation,69,Credit Card
-2026-06-13 23:09:00,Behrouz Biryani,food_delivery,84,UPI
-2026-06-14 08:00:00,Uber,transportation,39,UPI
-2026-06-14 08:06:00,Zepto,groceries,148,UPI
-2026-06-14 09:45:00,Apple Store,electronics,1662,Credit Card
-2026-06-14 11:47:00,Swiggy,food_delivery,71,Debit Card
-2026-06-14 12:02:00,DMart,groceries,336,Net Banking
-2026-06-14 16:06:00,Domino's,food_delivery,133,Net Banking
-2026-06-14 17:05:00,Uber,transportation,98,Debit Card
-2026-06-14 20:16:00,PlayStation Store,entertainment,155,UPI
-2026-06-14 20:57:00,Ajio,clothing,467,UPI
-2026-06-15 08:27:00,Uber,transportation,131,UPI
-2026-06-15 11:38:00,Indian Oil Petrol Pump,transportation,104,Debit Card
-2026-06-15 13:56:00,Nykaa,beauty,286,Credit Card
-2026-06-15 15:07:00,Domino's,food_delivery,86,UPI
-2026-06-15 16:14:00,Indian Oil Petrol Pump,transportation,54,UPI
-2026-06-15 16:27:00,Box8,food_delivery,74,Credit Card
-2026-06-15 19:36:00,Uber,transportation,157,UPI
-2026-06-15 22:24:00,The Body Shop,beauty,445,UPI
-2026-06-16 01:02:00,Zomato,food_delivery,99,UPI
-2026-06-16 09:54:00,Ola,transportation,131,UPI
-2026-06-16 11:20:00,Nykaa,beauty,365,Credit Card
-2026-06-16 14:31:00,BookMyShow,entertainment,234,UPI
-2026-06-16 17:18:00,Rapido,transportation,98,Credit Card
-2026-06-16 19:30:00,PVR Cinemas,entertainment,168,UPI
-2026-06-17 00:18:00,Behrouz Biryani,food_delivery,82,Credit Card
-2026-06-17 09:58:00,Zomato,food_delivery,84,Credit Card
-2026-06-17 20:41:00,Domino's,food_delivery,124,Credit Card
-2026-06-18 00:24:00,Box8,food_delivery,72,Net Banking
+2026-06-12 16:21:00,Uber,transportation,142,UPI
+2026-06-12 16:25:00,Swiggy,food_delivery,71,UPI
+2026-06-12 21:45:00,Uber,transportation,76,Credit Card
+2026-06-12 21:46:00,Uber,transportation,51,UPI
+2026-06-12 21:47:00,INOX,entertainment,272,UPI
+2026-06-13 00:29:00,Box8,food_delivery,75,Credit Card
+2026-06-13 01:45:00,Zomato,food_delivery,77,UPI
+2026-06-13 08:27:00,BookMyShow,entertainment,317,UPI
+2026-06-13 17:00:00,Blinkit,groceries,91,UPI
+2026-06-13 17:36:00,MakeMyTrip,travel,909,Debit Card
+2026-06-13 19:36:00,Box8,food_delivery,109,UPI
+2026-06-13 20:47:00,Uber,transportation,55,UPI
+2026-06-13 20:49:00,Box8,food_delivery,134,Debit Card
+2026-06-13 22:14:00,BookMyShow,entertainment,285,Debit Card
+2026-06-14 01:02:00,Domino's,food_delivery,99,UPI
+2026-06-14 11:20:00,Nykaa,beauty,365,Credit Card
+2026-06-14 12:25:00,INOX,entertainment,154,Credit Card
+2026-06-14 14:34:00,DMart,groceries,171,Credit Card
+2026-06-14 14:57:00,Box8,food_delivery,101,UPI
+2026-06-14 17:18:00,Rapido,transportation,98,Credit Card
+2026-06-14 17:31:00,Steam,entertainment,133,UPI
+2026-06-14 18:44:00,Croma,electronics,9393,UPI
+2026-06-14 22:07:00,The Body Shop,beauty,211,UPI
+2026-06-14 22:27:00,Rapido,transportation,54,UPI
+2026-06-14 23:35:00,Behrouz Biryani,food_delivery,82,UPI
+2026-06-15 00:21:00,Behrouz Biryani,food_delivery,100,Net Banking
+2026-06-15 01:03:00,Domino's,food_delivery,92,Debit Card
+2026-06-15 08:41:00,Indian Oil Petrol Pump,transportation,121,UPI
+2026-06-15 10:06:00,Box8,food_delivery,61,UPI
+2026-06-15 10:24:00,INOX,entertainment,140,Net Banking
+2026-06-15 12:10:00,Mamaearth,beauty,224,Debit Card
+2026-06-15 13:00:00,Ajio,clothing,634,UPI
+2026-06-15 13:49:00,Purplle,beauty,192,UPI
+2026-06-15 19:45:00,RedBus,travel,570,Credit Card
+2026-06-15 20:58:00,Indian Oil Petrol Pump,transportation,123,UPI
+2026-06-15 23:10:00,Zomato,food_delivery,79,UPI
+2026-06-16 16:00:00,PlayStation Store,entertainment,204,UPI
+2026-06-16 16:38:00,BigBasket,groceries,260,Credit Card
+2026-06-17 08:19:00,Ola,transportation,57,UPI
+2026-06-17 09:50:00,Instamart,groceries,245,UPI
+2026-06-17 15:01:00,PlayStation Store,entertainment,126,Debit Card
+2026-06-17 15:40:00,Blinkit,groceries,306,UPI
+2026-06-18 00:55:00,Zomato,food_delivery,113,Credit Card
+2026-06-18 08:10:00,Rapido,transportation,65,Credit Card
 2026-06-18 11:05:00,YouTube Premium,subscriptions,149,Credit Card
-2026-06-18 11:58:00,Box8,food_delivery,80,UPI
-2026-06-18 12:10:00,Mamaearth,beauty,224,Debit Card
-2026-06-18 13:49:00,Purplle,beauty,192,UPI
-2026-06-18 20:58:00,Indian Oil Petrol Pump,transportation,123,UPI
-2026-06-19 09:58:00,INOX,entertainment,184,Credit Card
-2026-06-19 12:33:00,The Body Shop,beauty,375,UPI
-2026-06-19 13:20:00,Rapido,transportation,125,UPI
-2026-06-19 19:21:00,INOX,entertainment,303,Debit Card
-2026-06-19 21:19:00,Domino's,food_delivery,84,Debit Card
-2026-06-19 23:01:00,Behrouz Biryani,food_delivery,83,Debit Card
-2026-06-20 00:01:00,Behrouz Biryani,food_delivery,95,Debit Card
-2026-06-20 01:12:00,Swiggy,food_delivery,124,UPI
-2026-06-20 01:39:00,Behrouz Biryani,food_delivery,62,Credit Card
-2026-06-20 01:50:00,Behrouz Biryani,food_delivery,123,UPI
-2026-06-20 08:41:00,Rapido,transportation,74,Credit Card
-2026-06-20 09:39:00,Behrouz Biryani,food_delivery,72,UPI
-2026-06-20 09:56:00,Zomato,food_delivery,61,Net Banking
-2026-06-20 11:24:00,H&M,clothing,946,Credit Card
-2026-06-20 13:32:00,INOX,entertainment,161,UPI
-2026-06-20 14:00:00,Behrouz Biryani,food_delivery,101,UPI
-2026-06-20 14:11:00,Box8,food_delivery,70,Credit Card
-2026-06-20 14:24:00,Uber,transportation,70,Net Banking
-2026-06-20 14:47:00,Behrouz Biryani,food_delivery,83,Net Banking
-2026-06-20 15:54:00,PlayStation Store,entertainment,183,UPI
-2026-06-20 16:20:00,Rapido,transportation,65,UPI
-2026-06-20 16:26:00,Swiggy,food_delivery,118,UPI
-2026-06-20 20:23:00,Uber,transportation,109,UPI
-2026-06-20 20:43:00,MakeMyTrip,travel,551,Credit Card
-2026-06-20 23:32:00,Zomato,food_delivery,64,UPI
-2026-06-21 08:33:00,Instamart,groceries,167,Credit Card
+2026-06-18 15:02:00,INOX,entertainment,327,Debit Card
+2026-06-18 15:51:00,INOX,entertainment,157,UPI
+2026-06-18 18:36:00,Zepto,groceries,417,Debit Card
+2026-06-18 21:28:00,Airbnb,travel,874,Credit Card
+2026-06-19 14:00:00,Uber,transportation,126,UPI
+2026-06-19 17:05:00,H&M,clothing,734,Credit Card
+2026-06-19 17:20:00,Namma Metro,transportation,110,UPI
+2026-06-19 19:22:00,DMart,groceries,320,UPI
+2026-06-19 19:42:00,Zomato,food_delivery,68,Credit Card
+2026-06-19 19:50:00,Domino's,food_delivery,92,Net Banking
+2026-06-19 21:14:00,Blinkit,groceries,329,UPI
+2026-06-20 01:06:00,Domino's,food_delivery,92,UPI
+2026-06-20 12:26:00,Instamart,groceries,246,UPI
+2026-06-20 18:05:00,Blinkit,groceries,145,UPI
+2026-06-20 20:37:00,Rapido,transportation,170,UPI
+2026-06-20 20:41:00,Swiggy,food_delivery,98,Credit Card
+2026-06-20 22:29:00,Urban Outfitters,clothing,704,UPI
+2026-06-20 22:37:00,Swiggy,food_delivery,57,UPI
 2026-06-21 09:18:00,PVR Cinemas,entertainment,241,UPI
 2026-06-21 09:29:00,BigBasket,groceries,57,UPI
 2026-06-21 11:15:00,Zomato,food_delivery,64,UPI
 2026-06-21 12:08:00,Behrouz Biryani,food_delivery,86,UPI
 2026-06-21 12:46:00,Instamart,groceries,371,UPI
+2026-06-21 14:31:00,Domino's,food_delivery,115,UPI
 2026-06-21 14:56:00,Namma Metro,transportation,81,Credit Card
-2026-06-21 18:52:00,Zara,clothing,530,Debit Card
 2026-06-21 19:03:00,Domino's,food_delivery,68,Credit Card
-2026-06-21 21:17:00,Box8,food_delivery,82,UPI
+2026-06-21 22:33:00,Domino's,food_delivery,126,Credit Card
 2026-06-21 22:56:00,Urban Outfitters,clothing,325,UPI
-2026-06-21 23:02:00,Behrouz Biryani,food_delivery,101,Credit Card
 2026-06-22 01:48:00,Zomato,food_delivery,55,UPI
 2026-06-22 08:31:00,Zepto,groceries,344,UPI
 2026-06-22 09:33:00,Uber,transportation,62,Credit Card
-2026-06-22 10:08:00,Swiggy,food_delivery,90,UPI
-2026-06-22 11:45:00,Zara,clothing,805,UPI
+2026-06-22 10:08:00,Sephora,beauty,425,UPI
 2026-06-22 12:15:00,Reliance Digital,electronics,1480,Debit Card
-2026-06-22 18:43:00,Purplle,beauty,250,Debit Card
-2026-06-23 01:45:00,Zomato,food_delivery,99,Credit Card
-2026-06-23 10:16:00,PlayStation Store,entertainment,233,UPI
-2026-06-23 11:00:00,Zomato,food_delivery,93,UPI
-2026-06-23 12:50:00,Ajio,clothing,361,UPI
-2026-06-23 12:57:00,Uber,transportation,100,UPI
-2026-06-23 16:33:00,RedBus,travel,401,Debit Card
-2026-06-23 20:00:00,Myntra,clothing,564,Credit Card
-2026-06-23 20:41:00,Zomato,food_delivery,72,Credit Card
-2026-06-23 20:51:00,Indian Oil Petrol Pump,transportation,61,UPI
-2026-06-24 09:44:00,Urban Outfitters,clothing,565,Credit Card
-2026-06-24 10:14:00,Box8,food_delivery,124,UPI
-2026-06-24 12:20:00,Zomato,food_delivery,63,UPI
-2026-06-24 14:33:00,Ola,transportation,93,UPI
-2026-06-24 15:08:00,Myntra,clothing,659,Net Banking
-2026-06-24 15:55:00,Blinkit,groceries,196,Debit Card
-2026-06-24 17:18:00,Blinkit,groceries,193,Credit Card
-2026-06-24 17:22:00,Ola,transportation,130,UPI
-2026-06-24 18:56:00,Namma Metro,transportation,114,UPI
-2026-06-24 19:07:00,Behrouz Biryani,food_delivery,85,UPI
-2026-06-24 19:58:00,Domino's,food_delivery,58,Credit Card
-2026-06-24 20:47:00,Zepto,groceries,350,UPI
-2026-06-25 09:02:00,Nykaa,beauty,259,UPI
-2026-06-25 12:57:00,Blinkit,groceries,148,UPI
-2026-06-25 17:52:00,Cult.fit,fitness,390,UPI
-2026-06-25 19:53:00,Zomato,food_delivery,114,Net Banking
-2026-06-25 22:24:00,IRCTC,travel,329,UPI
-2026-06-25 23:57:00,Swiggy,food_delivery,75,Credit Card
-2026-06-26 00:48:00,Domino's,food_delivery,99,UPI
-2026-06-26 11:52:00,HealthifyMe,fitness,236,UPI
-2026-06-26 13:01:00,Behrouz Biryani,food_delivery,87,UPI
-2026-06-26 13:34:00,Zomato,food_delivery,72,Credit Card
-2026-06-26 16:51:00,Rapido,transportation,125,UPI
-2026-06-26 18:04:00,Urban Outfitters,clothing,348,UPI
-2026-06-26 20:03:00,Zomato,food_delivery,73,UPI
-2026-06-27 01:56:00,Box8,food_delivery,74,Credit Card
-2026-06-27 10:09:00,Nykaa,beauty,588,Credit Card
-2026-06-27 11:14:00,Swiggy,food_delivery,131,UPI
-2026-06-27 12:23:00,IRCTC,travel,313,UPI
-2026-06-27 12:37:00,DMart,groceries,204,UPI
-2026-06-27 14:21:00,PlayStation Store,entertainment,133,Net Banking
-2026-06-27 16:02:00,Zepto,groceries,180,UPI
-2026-06-27 17:37:00,Reliance Digital,electronics,1286,UPI
-2026-06-27 22:21:00,Behrouz Biryani,food_delivery,119,UPI
-2026-06-27 22:23:00,PlayStation Store,entertainment,198,UPI
-2026-06-27 23:09:00,Zomato,food_delivery,60,UPI
-2026-06-28 09:43:00,Behrouz Biryani,food_delivery,105,UPI
-2026-06-28 09:45:00,Uber,transportation,64,UPI
-2026-06-28 14:40:00,Swiggy,food_delivery,145,UPI
-2026-06-28 16:02:00,Domino's,food_delivery,106,UPI
-2026-06-28 18:24:00,Indian Oil Petrol Pump,transportation,70,UPI
-2026-06-28 18:42:00,BookMyShow,entertainment,207,UPI
-2026-06-28 19:11:00,Uber,transportation,136,UPI
-2026-06-28 19:26:00,DMart,groceries,455,Credit Card
-2026-06-28 19:34:00,Myntra,clothing,988,Debit Card
-2026-06-28 19:43:00,Domino's,food_delivery,138,UPI
-2026-06-28 22:43:00,Namma Metro,transportation,94,Credit Card
-2026-06-28 22:50:00,Box8,food_delivery,74,UPI
-2026-06-29 00:27:00,Box8,food_delivery,80,UPI
-2026-06-29 01:41:00,Domino's,food_delivery,122,UPI
-2026-06-29 08:58:00,Rapido,transportation,98,Net Banking
-2026-06-29 09:28:00,Apple Store,electronics,1306,UPI
-2026-06-29 12:11:00,Ajio,clothing,1023,UPI
-2026-06-29 16:09:00,Domino's,food_delivery,119,UPI
-2026-06-29 17:17:00,The Body Shop,beauty,567,UPI
-2026-06-29 19:38:00,Urban Outfitters,clothing,531,UPI
-2026-06-29 20:24:00,Urban Outfitters,clothing,689,Debit Card
-2026-06-29 20:29:00,Box8,food_delivery,73,UPI
-2026-06-29 21:55:00,Domino's,food_delivery,134,Credit Card
-2026-06-29 23:52:00,Behrouz Biryani,food_delivery,116,Credit Card
-2026-06-30 00:03:00,Behrouz Biryani,food_delivery,95,UPI
-2026-06-30 11:44:00,Urban Outfitters,clothing,478,Debit Card
-2026-06-30 12:48:00,Box8,food_delivery,71,UPI
-2026-06-30 14:46:00,Amazon,electronics,5208,UPI
-2026-06-30 18:40:00,Swiggy,food_delivery,83,Debit Card
-2026-06-30 19:19:00,Purplle,beauty,164,Debit Card
-2026-06-30 21:33:00,PVR Cinemas,entertainment,136,UPI
-2026-07-01 10:27:00,Zepto,groceries,153,UPI
-2026-07-01 10:51:00,Nykaa,beauty,301,Net Banking
-2026-07-01 14:24:00,Namma Metro,transportation,72,UPI
-2026-07-01 19:05:00,Ola,transportation,51,UPI
-2026-07-01 19:32:00,Namma Metro,transportation,89,Debit Card
-2026-07-01 20:50:00,Zomato,food_delivery,86,Credit Card
-2026-07-02 10:22:00,Zepto,groceries,237,UPI
-2026-07-02 15:17:00,Ola,transportation,63,Credit Card
-2026-07-03 01:49:00,Domino's,food_delivery,103,UPI
-2026-07-03 10:01:00,Rapido,transportation,101,UPI
-2026-07-03 13:20:00,Swiggy,food_delivery,63,Credit Card
-2026-07-03 15:03:00,Purplle,beauty,569,UPI
+2026-06-22 17:04:00,Purplle,beauty,636,Debit Card
+2026-06-23 00:09:00,Swiggy,food_delivery,83,Credit Card
+2026-06-23 08:10:00,Behrouz Biryani,food_delivery,71,UPI
+2026-06-23 08:32:00,IRCTC,travel,215,Credit Card
+2026-06-23 14:31:00,Behrouz Biryani,food_delivery,129,Credit Card
+2026-06-23 19:07:00,Ola,transportation,68,Credit Card
+2026-06-23 22:20:00,Box8,food_delivery,99,Debit Card
+2026-06-24 17:36:00,DMart,groceries,160,Credit Card
+2026-06-24 18:45:00,Ajio,clothing,686,Credit Card
+2026-06-25 13:27:00,DMart,groceries,275,Net Banking
+2026-06-25 14:24:00,Zepto,groceries,225,UPI
+2026-06-25 15:54:00,PVR Cinemas,entertainment,309,Credit Card
+2026-06-25 22:53:00,Zomato,food_delivery,75,UPI
+2026-06-26 01:28:00,Domino's,food_delivery,127,UPI
+2026-06-26 08:35:00,Ola,transportation,75,Debit Card
+2026-06-26 10:21:00,Nykaa,beauty,296,UPI
+2026-06-26 11:57:00,Uber,transportation,36,UPI
+2026-06-26 14:15:00,PVR Cinemas,entertainment,198,UPI
+2026-06-26 20:29:00,DMart,groceries,318,UPI
+2026-06-26 21:36:00,Indian Oil Petrol Pump,transportation,74,Credit Card
+2026-06-26 22:39:00,BookMyShow,entertainment,241,UPI
+2026-06-26 22:56:00,Swiggy,food_delivery,106,UPI
+2026-06-27 01:49:00,Domino's,food_delivery,96,Credit Card
+2026-06-27 10:00:00,Swiggy,food_delivery,137,UPI
+2026-06-27 10:26:00,INOX,entertainment,157,Debit Card
+2026-06-27 11:43:00,PlayStation Store,entertainment,99,Debit Card
+2026-06-27 13:31:00,Mamaearth,beauty,349,UPI
+2026-06-27 16:31:00,DMart,groceries,180,UPI
+2026-06-27 19:02:00,Myntra,clothing,718,Debit Card
+2026-06-27 19:17:00,BookMyShow,entertainment,264,UPI
+2026-06-27 23:15:00,Swiggy,food_delivery,129,Debit Card
+2026-06-27 23:51:00,Box8,food_delivery,89,Debit Card
+2026-06-28 08:00:00,Behrouz Biryani,food_delivery,69,Credit Card
+2026-06-28 12:23:00,IRCTC,travel,313,UPI
+2026-06-28 12:37:00,DMart,groceries,204,UPI
+2026-06-28 15:31:00,Zara,clothing,513,UPI
+2026-06-28 16:02:00,Zepto,groceries,180,UPI
+2026-06-28 17:37:00,Reliance Digital,electronics,1286,UPI
+2026-06-28 20:21:00,MakeMyTrip,travel,1028,UPI
+2026-06-29 09:27:00,Rapido,transportation,93,Net Banking
+2026-06-29 10:34:00,Domino's,food_delivery,106,UPI
+2026-06-29 10:42:00,Zara,clothing,590,UPI
+2026-06-29 12:42:00,Uber,transportation,145,Credit Card
+2026-06-29 12:58:00,BigBasket,groceries,299,UPI
+2026-06-29 14:23:00,Blinkit,groceries,263,UPI
+2026-06-29 20:50:00,Croma,electronics,4249,Credit Card
+2026-06-30 01:53:00,Zomato,food_delivery,124,UPI
+2026-06-30 12:01:00,Ola,transportation,100,UPI
+2026-06-30 23:39:00,Box8,food_delivery,70,Debit Card
+2026-07-01 00:38:00,Domino's,food_delivery,87,Debit Card
+2026-07-01 12:41:00,Blinkit,groceries,232,Credit Card
+2026-07-01 13:26:00,BigBasket,groceries,252,Debit Card
+2026-07-01 13:32:00,Decathlon,fitness,485,UPI
+2026-07-01 17:38:00,Mamaearth,beauty,254,UPI
+2026-07-01 19:13:00,Cult.fit,fitness,533,UPI
+2026-07-01 20:32:00,Nykaa,beauty,361,Credit Card
+2026-07-01 21:08:00,INOX,entertainment,160,Credit Card
+2026-07-01 22:32:00,PVR Cinemas,entertainment,249,Debit Card
+2026-07-01 22:54:00,Domino's,food_delivery,77,Debit Card
+2026-07-02 11:08:00,Behrouz Biryani,food_delivery,117,Credit Card
+2026-07-02 16:47:00,Sephora,beauty,314,Debit Card
+2026-07-03 08:58:00,Rapido,transportation,98,Net Banking
 2026-07-03 15:57:00,Netflix,subscriptions,649,Credit Card
-2026-07-03 22:07:00,Swiggy,food_delivery,88,Debit Card
-2026-07-04 00:18:00,Behrouz Biryani,food_delivery,99,UPI
-2026-07-04 10:50:00,Ola,transportation,51,Credit Card
-2026-07-04 15:17:00,Gold's Gym,fitness,390,UPI
-2026-07-04 15:26:00,DMart,groceries,468,UPI
-2026-07-04 21:47:00,Zomato,food_delivery,138,UPI
-2026-07-05 09:01:00,Domino's,food_delivery,106,Credit Card
-2026-07-05 10:35:00,Domino's,food_delivery,120,Credit Card
-2026-07-05 13:46:00,Indian Oil Petrol Pump,transportation,60,Credit Card
-2026-07-05 15:05:00,Box8,food_delivery,83,UPI
-2026-07-05 15:26:00,Blinkit,groceries,211,Credit Card
-2026-07-05 16:17:00,Urban Outfitters,clothing,541,Credit Card
+2026-07-03 17:17:00,The Body Shop,beauty,567,UPI
+2026-07-03 20:29:00,Box8,food_delivery,73,UPI
+2026-07-03 23:52:00,Behrouz Biryani,food_delivery,116,Credit Card
+2026-07-04 00:03:00,Behrouz Biryani,food_delivery,95,UPI
+2026-07-04 09:32:00,BigBasket,groceries,193,UPI
+2026-07-04 11:44:00,Urban Outfitters,clothing,478,Debit Card
+2026-07-04 12:48:00,Box8,food_delivery,71,UPI
+2026-07-04 13:40:00,Namma Metro,transportation,115,Debit Card
+2026-07-04 18:46:00,Sephora,beauty,442,UPI
+2026-07-04 19:19:00,Urban Outfitters,clothing,324,Debit Card
+2026-07-04 21:33:00,Sephora,beauty,221,UPI
+2026-07-05 09:40:00,BookMyShow,entertainment,127,Credit Card
+2026-07-05 10:10:00,IndiGo,travel,914,UPI
+2026-07-05 10:22:00,Zepto,groceries,237,UPI
+2026-07-05 12:37:00,Nykaa,beauty,362,UPI
+2026-07-05 14:01:00,Zepto,groceries,285,UPI
+2026-07-05 15:17:00,PVR Cinemas,entertainment,159,Credit Card
+2026-07-05 17:00:00,Domino's,food_delivery,80,Credit Card
 2026-07-05 17:44:00,Spotify Premium,subscriptions,119,Credit Card
-2026-07-05 19:14:00,Domino's,food_delivery,92,Net Banking
-2026-07-05 20:33:00,Zomato,food_delivery,127,UPI
-2026-07-05 21:35:00,Instamart,groceries,145,Debit Card
-2026-07-05 22:54:00,Box8,food_delivery,86,UPI
-2026-07-06 08:01:00,Box8,food_delivery,81,UPI
-2026-07-06 14:51:00,Myntra,clothing,387,Debit Card
-2026-07-06 14:57:00,Myntra,clothing,746,UPI
-2026-07-06 16:27:00,Namma Metro,transportation,40,UPI
-2026-07-06 18:36:00,The Body Shop,beauty,228,UPI
-2026-07-06 21:21:00,Indian Oil Petrol Pump,transportation,96,UPI
-2026-07-06 22:10:00,Domino's,food_delivery,74,Debit Card
-2026-07-07 08:17:00,Purplle,beauty,609,UPI
-2026-07-07 15:53:00,Rapido,transportation,66,UPI
-2026-07-07 20:16:00,DMart,groceries,125,Debit Card
-2026-07-07 21:33:00,Zomato,food_delivery,95,UPI
-2026-07-08 09:05:00,H&M,clothing,509,UPI
-2026-07-08 09:05:00,Decathlon,fitness,329,UPI
-2026-07-08 11:50:00,Namma Metro,transportation,117,Debit Card
-2026-07-08 13:32:00,Blinkit,groceries,233,Debit Card
-2026-07-08 13:53:00,Zomato,food_delivery,74,UPI
-2026-07-08 14:49:00,DMart,groceries,389,UPI
+2026-07-05 21:16:00,Nykaa,beauty,362,Credit Card
+2026-07-05 22:48:00,Box8,food_delivery,73,UPI
+2026-07-05 22:51:00,Zepto,groceries,430,UPI
+2026-07-07 09:30:00,Behrouz Biryani,food_delivery,75,UPI
+2026-07-07 09:56:00,Rapido,transportation,125,Debit Card
+2026-07-07 11:24:00,Zara,clothing,617,Debit Card
+2026-07-07 13:21:00,BigBasket,groceries,175,UPI
+2026-07-07 14:02:00,Steam,entertainment,402,UPI
+2026-07-07 14:11:00,Box8,food_delivery,76,Credit Card
+2026-07-07 14:46:00,Purplle,beauty,319,UPI
+2026-07-07 19:06:00,Blinkit,groceries,119,UPI
+2026-07-08 11:57:00,Rapido,transportation,121,Credit Card
+2026-07-08 12:04:00,Ola,transportation,70,UPI
+2026-07-08 13:27:00,Behrouz Biryani,food_delivery,89,Credit Card
 2026-07-08 15:07:00,iCloud+,subscriptions,75,Credit Card
-2026-07-08 18:26:00,Gold's Gym,fitness,385,UPI
-2026-07-08 20:12:00,Box8,food_delivery,75,UPI
-2026-07-08 22:33:00,Instamart,groceries,156,UPI
-2026-07-09 01:06:00,Swiggy,food_delivery,136,UPI
-2026-07-09 15:16:00,BookMyShow,entertainment,192,UPI
-2026-07-09 17:01:00,Box8,food_delivery,62,Debit Card
-2026-07-09 18:47:00,Uber,transportation,77,Credit Card
-2026-07-09 20:48:00,The Body Shop,beauty,181,Credit Card
-2026-07-09 22:03:00,Purplle,beauty,310,Credit Card
-2026-07-10 09:14:00,Uber,transportation,81,Credit Card
-2026-07-10 10:16:00,Ola,transportation,67,UPI
-2026-07-10 10:20:00,Myntra,clothing,543,UPI
-2026-07-10 13:11:00,Rapido,transportation,52,Credit Card
-2026-07-10 14:48:00,DMart,groceries,206,UPI
-2026-07-10 15:28:00,Blinkit,groceries,294,UPI
-2026-07-10 18:44:00,Amazon,electronics,612,UPI
-2026-07-10 21:33:00,Ola,transportation,64,Net Banking
-2026-07-10 23:07:00,Swiggy,food_delivery,79,Credit Card
-2026-07-10 23:31:00,Zomato,food_delivery,74,Debit Card
-2026-07-11 00:13:00,Behrouz Biryani,food_delivery,80,UPI
-2026-07-11 01:35:00,Behrouz Biryani,food_delivery,86,Debit Card
-2026-07-11 08:29:00,Box8,food_delivery,91,Credit Card
-2026-07-11 08:49:00,Cult.fit,fitness,351,Credit Card
-2026-07-11 08:52:00,Box8,food_delivery,98,UPI
-2026-07-11 11:58:00,Decathlon,fitness,362,UPI
-2026-07-11 13:10:00,Uber,transportation,58,UPI
-2026-07-11 14:13:00,Indian Oil Petrol Pump,transportation,119,UPI
-2026-07-11 15:37:00,Nykaa,beauty,509,Credit Card
-2026-07-11 16:22:00,Rapido,transportation,113,Debit Card
-2026-07-11 19:05:00,Nykaa,beauty,476,UPI
-2026-07-11 20:39:00,Amazon,electronics,1982,Debit Card
-2026-07-11 22:06:00,INOX,entertainment,297,UPI
-2026-07-11 22:54:00,Box8,food_delivery,119,UPI
-2026-07-12 10:12:00,Swiggy,food_delivery,103,Debit Card
-2026-07-12 10:44:00,Indian Oil Petrol Pump,transportation,120,UPI
-2026-07-12 11:29:00,Behrouz Biryani,food_delivery,93,UPI
-2026-07-12 11:37:00,Urban Outfitters,clothing,778,UPI
-2026-07-12 14:12:00,Domino's,food_delivery,80,Debit Card
-2026-07-12 17:07:00,Zomato,food_delivery,101,Credit Card
+2026-07-08 16:21:00,Swiggy,food_delivery,125,UPI
+2026-07-08 16:36:00,Instamart,groceries,64,Credit Card
+2026-07-08 16:38:00,Ajio,clothing,392,UPI
+2026-07-08 17:47:00,Purplle,beauty,561,UPI
+2026-07-08 17:55:00,Indian Oil Petrol Pump,transportation,42,UPI
+2026-07-08 20:12:00,Swiggy,food_delivery,110,Credit Card
+2026-07-09 01:51:00,Zomato,food_delivery,116,UPI
+2026-07-09 09:56:00,Steam,entertainment,363,Debit Card
+2026-07-09 12:25:00,Uber,transportation,55,UPI
+2026-07-09 16:06:00,Behrouz Biryani,food_delivery,127,Debit Card
+2026-07-09 17:57:00,BookMyShow,entertainment,219,Credit Card
+2026-07-10 09:58:00,Cult.fit,fitness,466,Credit Card
+2026-07-10 10:23:00,Zomato,food_delivery,67,Debit Card
+2026-07-10 13:02:00,Purplle,beauty,314,UPI
+2026-07-10 15:26:00,Purplle,beauty,246,UPI
+2026-07-10 19:36:00,Domino's,food_delivery,105,UPI
+2026-07-10 20:33:00,IndiGo,travel,5697,UPI
+2026-07-10 21:29:00,Box8,food_delivery,59,Credit Card
+2026-07-11 00:51:00,Swiggy,food_delivery,142,Credit Card
+2026-07-11 08:17:00,Urban Outfitters,clothing,927,UPI
+2026-07-11 13:32:00,Apple Store,electronics,1002,Debit Card
+2026-07-11 20:16:00,DMart,groceries,125,Debit Card
+2026-07-11 21:33:00,Zomato,food_delivery,95,UPI
+2026-07-11 22:21:00,BigBasket,groceries,338,UPI
+2026-07-12 09:05:00,Decathlon,fitness,329,UPI
+2026-07-12 10:39:00,Box8,food_delivery,81,UPI
+2026-07-12 11:50:00,Namma Metro,transportation,117,Debit Card
+2026-07-12 13:53:00,Zomato,food_delivery,74,UPI
+2026-07-12 14:49:00,Namma Metro,transportation,141,UPI
 2026-07-12 17:46:00,Amazon Prime,subscriptions,299,Credit Card
-2026-07-12 18:03:00,BigBasket,groceries,205,UPI
-2026-07-12 20:30:00,Blinkit,groceries,154,Debit Card
-2026-07-12 23:07:00,Behrouz Biryani,food_delivery,79,Debit Card
-2026-07-13 08:20:00,Domino's,food_delivery,128,Credit Card
-2026-07-13 09:58:00,Rapido,transportation,81,UPI
-2026-07-13 11:24:00,Blinkit,groceries,229,UPI
-2026-07-13 14:41:00,Box8,food_delivery,59,Credit Card
-2026-07-13 15:07:00,Indian Oil Petrol Pump,transportation,81,Credit Card
-2026-07-13 15:51:00,Indian Oil Petrol Pump,transportation,63,Credit Card
-2026-07-13 17:29:00,Uber,transportation,89,UPI
-2026-07-13 17:55:00,Swiggy,food_delivery,104,UPI
-2026-07-13 19:17:00,Airbnb,travel,1265,Credit Card
-2026-07-13 20:24:00,Behrouz Biryani,food_delivery,60,UPI
-2026-07-13 21:30:00,Ajio,clothing,463,UPI
-2026-07-13 22:48:00,Swiggy,food_delivery,130,UPI
-2026-07-14 19:24:00,Uber,transportation,96,Credit Card
-2026-07-14 22:07:00,Swiggy,food_delivery,150,Debit Card
-2026-07-15 01:49:00,Behrouz Biryani,food_delivery,72,UPI
-2026-07-15 09:17:00,Box8,food_delivery,107,Credit Card
-2026-07-15 14:58:00,Nykaa,beauty,196,UPI
-2026-07-15 16:09:00,Swiggy,food_delivery,101,UPI
-2026-07-15 16:40:00,Namma Metro,transportation,101,UPI
-2026-07-15 20:52:00,Namma Metro,transportation,46,UPI
-2026-07-16 08:31:00,Domino's,food_delivery,88,UPI
-2026-07-16 08:58:00,Ola,transportation,165,UPI
-2026-07-16 09:55:00,Namma Metro,transportation,54,UPI
-2026-07-16 10:44:00,Domino's,food_delivery,131,Debit Card
-2026-07-16 11:20:00,IndiGo,travel,550,UPI
-2026-07-16 12:18:00,Uber,transportation,97,Credit Card
-2026-07-16 15:19:00,Steam,entertainment,335,UPI
-2026-07-16 16:10:00,Gold's Gym,fitness,371,UPI
-2026-07-16 22:43:00,PVR Cinemas,entertainment,228,UPI
-2026-07-17 01:06:00,Domino's,food_delivery,89,Credit Card
-2026-07-17 14:19:00,Namma Metro,transportation,69,UPI
-2026-07-17 15:47:00,Rapido,transportation,114,Credit Card
-2026-07-17 16:33:00,Box8,food_delivery,97,UPI
-2026-07-17 16:51:00,Uber,transportation,147,UPI
-2026-07-17 18:19:00,H&M,clothing,303,Credit Card
-2026-07-17 18:26:00,Indian Oil Petrol Pump,transportation,78,UPI
-2026-07-17 18:50:00,Steam,entertainment,208,UPI
-2026-07-17 19:13:00,The Body Shop,beauty,290,UPI
-2026-07-17 21:11:00,BookMyShow,entertainment,137,Credit Card
-2026-07-17 21:32:00,DMart,groceries,72,Debit Card
-2026-07-17 22:01:00,Zomato,food_delivery,98,UPI
-2026-07-17 23:38:00,Box8,food_delivery,81,UPI
-2026-07-18 19:13:00,Behrouz Biryani,food_delivery,144,Credit Card
+2026-07-12 20:12:00,Box8,food_delivery,75,UPI
+2026-07-12 22:19:00,Ajio,clothing,503,UPI
+2026-07-12 22:33:00,Instamart,groceries,156,UPI
+2026-07-13 11:36:00,Ola,transportation,97,Net Banking
+2026-07-13 12:28:00,Nykaa,beauty,535,UPI
+2026-07-13 15:55:00,INOX,entertainment,207,Net Banking
+2026-07-13 17:53:00,DMart,groceries,312,Credit Card
+2026-07-13 21:24:00,INOX,entertainment,200,UPI
+2026-07-14 09:08:00,Swiggy,food_delivery,96,UPI
+2026-07-14 09:48:00,BigBasket,groceries,298,UPI
+2026-07-14 11:10:00,Blinkit,groceries,185,UPI
+2026-07-14 12:11:00,Gold's Gym,fitness,253,UPI
+2026-07-14 16:43:00,The Body Shop,beauty,246,UPI
+2026-07-14 17:43:00,Swiggy,food_delivery,112,UPI
+2026-07-14 20:08:00,Ajio,clothing,549,UPI
+2026-07-14 21:09:00,BookMyShow,entertainment,271,UPI
+2026-07-14 21:44:00,Myntra,clothing,445,UPI
+2026-07-14 22:50:00,Swiggy,food_delivery,89,UPI
+2026-07-15 01:53:00,Box8,food_delivery,119,UPI
+2026-07-15 11:10:00,Indian Oil Petrol Pump,transportation,66,UPI
+2026-07-15 13:49:00,Reliance Digital,electronics,1438,UPI
+2026-07-15 14:37:00,Zomato,food_delivery,79,UPI
+2026-07-15 15:24:00,Swiggy,food_delivery,91,Credit Card
+2026-07-15 18:14:00,Swiggy,food_delivery,88,Credit Card
+2026-07-15 18:51:00,Blinkit,groceries,463,Debit Card
+2026-07-15 20:42:00,Namma Metro,transportation,50,Credit Card
+2026-07-15 20:56:00,Indian Oil Petrol Pump,transportation,61,Net Banking
+2026-07-15 21:02:00,Ola,transportation,165,UPI
+2026-07-15 22:00:00,Box8,food_delivery,86,UPI
+2026-07-16 00:24:00,Behrouz Biryani,food_delivery,113,UPI
+2026-07-16 11:06:00,DMart,groceries,165,UPI
+2026-07-16 14:31:00,Domino's,food_delivery,91,Credit Card
+2026-07-16 17:23:00,Airbnb,travel,660,Debit Card
+2026-07-16 21:13:00,Gold's Gym,fitness,350,Debit Card
+2026-07-16 22:46:00,Domino's,food_delivery,90,Debit Card
+2026-07-17 15:02:00,Instamart,groceries,154,Debit Card
+2026-07-17 19:23:00,Rapido,transportation,59,Debit Card
+2026-07-18 10:58:00,Namma Metro,transportation,138,UPI
+2026-07-18 11:29:00,Behrouz Biryani,food_delivery,93,UPI
+2026-07-18 15:13:00,Namma Metro,transportation,160,UPI
+2026-07-18 15:19:00,Ola,transportation,58,Net Banking
+2026-07-18 15:46:00,BigBasket,groceries,167,UPI
+2026-07-18 18:27:00,Behrouz Biryani,food_delivery,97,UPI
+2026-07-18 19:13:00,Swiggy,food_delivery,78,Debit Card
+2026-07-18 19:14:00,Box8,food_delivery,95,UPI
+2026-07-18 19:14:00,Rapido,transportation,137,Credit Card
 2026-07-18 19:26:00,YouTube Premium,subscriptions,149,Credit Card
-2026-07-18 22:36:00,Behrouz Biryani,food_delivery,123,UPI
-2026-07-18 23:08:00,Domino's,food_delivery,87,Debit Card
-2026-07-18 23:54:00,Behrouz Biryani,food_delivery,135,Net Banking
-2026-07-19 09:40:00,Blinkit,groceries,161,Net Banking
-2026-07-19 12:08:00,Behrouz Biryani,food_delivery,128,UPI
-2026-07-19 13:46:00,DMart,groceries,343,Credit Card
-2026-07-19 15:19:00,Uber,transportation,65,Debit Card
-2026-07-19 15:43:00,Myntra,clothing,883,UPI
-2026-07-19 18:57:00,Cult.fit,fitness,337,UPI
-2026-07-19 20:47:00,Sephora,beauty,319,Credit Card
-2026-07-19 22:18:00,Domino's,food_delivery,106,UPI
-2026-07-20 11:45:00,Domino's,food_delivery,90,UPI
-2026-07-20 12:38:00,Ola,transportation,72,UPI
-2026-07-20 14:15:00,Mamaearth,beauty,346,UPI
-2026-07-21 00:45:00,Behrouz Biryani,food_delivery,114,Credit Card
-2026-07-21 19:02:00,DMart,groceries,437,UPI
-2026-07-21 21:09:00,INOX,entertainment,223,Net Banking
-2026-07-21 22:46:00,Behrouz Biryani,food_delivery,88,Debit Card
-2026-07-22 11:03:00,The Body Shop,beauty,216,Debit Card
-2026-07-22 15:00:00,Box8,food_delivery,67,UPI
-2026-07-22 16:55:00,Steam,entertainment,270,Debit Card
-2026-07-22 20:00:00,Nykaa,beauty,279,Net Banking
-2026-07-22 21:29:00,HealthifyMe,fitness,295,Debit Card
-2026-07-23 00:02:00,Behrouz Biryani,food_delivery,130,UPI
-2026-07-23 14:05:00,Rapido,transportation,71,Credit Card
-2026-07-23 14:42:00,Indian Oil Petrol Pump,transportation,105,Net Banking
-2026-07-23 15:20:00,Namma Metro,transportation,64,UPI
-2026-07-23 22:17:00,Behrouz Biryani,food_delivery,112,Debit Card
-2026-07-23 22:42:00,Zomato,food_delivery,86,UPI
-2026-07-24 01:01:00,Swiggy,food_delivery,77,UPI
-2026-07-24 08:35:00,Ola,transportation,140,UPI
-2026-07-24 16:58:00,Swiggy,food_delivery,75,Debit Card
-2026-07-24 20:56:00,PlayStation Store,entertainment,284,UPI
-2026-07-24 23:20:00,Behrouz Biryani,food_delivery,85,UPI
-2026-07-25 01:09:00,Swiggy,food_delivery,99,UPI
-2026-07-25 09:17:00,BigBasket,groceries,223,Credit Card
-2026-07-25 10:08:00,HealthifyMe,fitness,585,UPI
-2026-07-25 10:15:00,Domino's,food_delivery,88,Debit Card
-2026-07-25 11:03:00,PlayStation Store,entertainment,259,Credit Card
-2026-07-25 11:10:00,Swiggy,food_delivery,136,UPI
-2026-07-25 12:03:00,Ajio,clothing,560,UPI
-2026-07-25 19:16:00,RedBus,travel,360,UPI
-2026-07-25 19:20:00,The Body Shop,beauty,224,Credit Card
-2026-07-25 20:35:00,Namma Metro,transportation,117,Debit Card
-2026-07-25 20:39:00,H&M,clothing,452,Credit Card
-2026-07-25 23:38:00,Box8,food_delivery,87,UPI
-2026-07-26 00:06:00,Domino's,food_delivery,64,UPI
-2026-07-26 09:20:00,Behrouz Biryani,food_delivery,135,UPI
-2026-07-26 10:55:00,Zepto,groceries,175,UPI
-2026-07-26 11:14:00,Box8,food_delivery,102,UPI
-2026-07-26 12:11:00,Zara,clothing,520,Debit Card
-2026-07-26 12:34:00,Ola,transportation,73,Net Banking
-2026-07-26 16:15:00,Swiggy,food_delivery,64,UPI
-2026-07-26 19:56:00,Namma Metro,transportation,48,Credit Card
-2026-07-26 21:20:00,Nykaa,beauty,467,UPI
-2026-07-27 09:11:00,Box8,food_delivery,128,UPI
-2026-07-27 09:42:00,Uber,transportation,84,Debit Card
-2026-07-27 10:41:00,Nykaa,beauty,284,UPI
-2026-07-27 17:34:00,Indian Oil Petrol Pump,transportation,111,Debit Card
-2026-07-27 22:50:00,Behrouz Biryani,food_delivery,97,Credit Card
-2026-07-28 01:20:00,Behrouz Biryani,food_delivery,85,UPI
-2026-07-28 08:56:00,Namma Metro,transportation,30,Debit Card
-2026-07-28 11:28:00,Namma Metro,transportation,81,UPI
-2026-07-28 15:15:00,Croma,electronics,6985,UPI
-2026-07-28 15:37:00,Box8,food_delivery,88,Net Banking
-2026-07-28 19:49:00,Zomato,food_delivery,92,UPI
-2026-07-29 10:05:00,Blinkit,groceries,201,Debit Card
-2026-07-29 17:04:00,Ajio,clothing,593,UPI
-2026-07-29 18:00:00,Domino's,food_delivery,80,Debit Card
-2026-07-29 20:34:00,Zomato,food_delivery,98,UPI
-2026-07-30 15:52:00,Instamart,groceries,220,UPI
-2026-07-30 23:32:00,Zomato,food_delivery,124,UPI
-2026-07-31 01:34:00,Box8,food_delivery,112,Credit Card
-2026-07-31 08:11:00,H&M,clothing,608,UPI
-2026-07-31 12:02:00,Box8,food_delivery,78,Debit Card
-2026-07-31 13:30:00,Purplle,beauty,292,UPI
-2026-07-31 14:40:00,Uber,transportation,52,Debit Card
-2026-07-31 22:17:00,Domino's,food_delivery,55,Net Banking
-2026-08-01 10:40:00,RedBus,travel,478,UPI
-2026-08-01 11:44:00,Namma Metro,transportation,96,Debit Card
-2026-08-01 14:25:00,Steam,entertainment,244,Credit Card
-2026-08-01 15:23:00,INOX,entertainment,108,Credit Card
-2026-08-01 16:20:00,Myntra,clothing,553,UPI
-2026-08-01 16:40:00,Behrouz Biryani,food_delivery,82,Net Banking
-2026-08-01 16:54:00,Indian Oil Petrol Pump,transportation,68,Net Banking
-2026-08-01 19:54:00,Box8,food_delivery,67,UPI
-2026-08-01 20:54:00,BookMyShow,entertainment,115,UPI
-2026-08-02 08:45:00,Nykaa,beauty,411,Debit Card
-2026-08-02 11:13:00,Purplle,beauty,205,Debit Card
-2026-08-02 13:35:00,Rapido,transportation,121,Credit Card
-2026-08-02 14:21:00,Box8,food_delivery,125,UPI
-2026-08-02 14:57:00,Cult.fit,fitness,191,Debit Card
-2026-08-02 16:06:00,Swiggy,food_delivery,115,Credit Card
-2026-08-02 17:12:00,Purplle,beauty,357,Debit Card
-2026-08-02 17:55:00,Behrouz Biryani,food_delivery,63,UPI
-2026-08-02 18:23:00,Zepto,groceries,115,UPI
-2026-08-02 22:22:00,Domino's,food_delivery,71,Debit Card
-2026-08-03 01:53:00,Swiggy,food_delivery,71,UPI
-2026-08-03 15:00:00,Namma Metro,transportation,103,Net Banking
+2026-07-18 20:23:00,BigBasket,groceries,88,Debit Card
+2026-07-18 21:14:00,Gold's Gym,fitness,311,UPI
+2026-07-18 22:21:00,Swiggy,food_delivery,109,UPI
+2026-07-18 22:48:00,Steam,entertainment,242,UPI
+2026-07-19 01:12:00,Box8,food_delivery,114,Credit Card
+2026-07-19 09:45:00,Behrouz Biryani,food_delivery,120,Credit Card
+2026-07-19 10:36:00,Ola,transportation,94,UPI
+2026-07-19 12:14:00,BigBasket,groceries,239,Credit Card
+2026-07-19 17:55:00,Blinkit,groceries,226,UPI
+2026-07-19 20:19:00,DMart,groceries,383,UPI
+2026-07-19 22:03:00,Zomato,food_delivery,69,UPI
+2026-07-19 22:56:00,Box8,food_delivery,122,Debit Card
+2026-07-19 23:46:00,Box8,food_delivery,90,UPI
+2026-07-20 13:45:00,Zomato,food_delivery,51,Credit Card
+2026-07-20 15:37:00,Instamart,groceries,228,Credit Card
+2026-07-20 15:54:00,Box8,food_delivery,94,UPI
+2026-07-20 16:29:00,Apple Store,electronics,917,Credit Card
+2026-07-20 22:34:00,Purplle,beauty,320,UPI
+2026-07-20 23:49:00,Swiggy,food_delivery,112,UPI
+2026-07-21 10:11:00,HealthifyMe,fitness,453,Credit Card
+2026-07-21 10:13:00,Zara,clothing,709,Debit Card
+2026-07-22 01:06:00,Domino's,food_delivery,89,Credit Card
+2026-07-22 12:12:00,Zepto,groceries,391,UPI
+2026-07-22 12:14:00,Blinkit,groceries,204,Net Banking
+2026-07-22 14:19:00,Namma Metro,transportation,69,UPI
+2026-07-22 16:33:00,BookMyShow,entertainment,206,UPI
+2026-07-22 22:06:00,Namma Metro,transportation,162,Credit Card
+2026-07-22 22:15:00,Instamart,groceries,319,UPI
+2026-07-23 08:06:00,Indian Oil Petrol Pump,transportation,124,Credit Card
+2026-07-23 18:03:00,Namma Metro,transportation,64,UPI
+2026-07-24 15:47:00,Rapido,transportation,114,Credit Card
+2026-07-24 18:08:00,Zomato,food_delivery,130,UPI
+2026-07-24 18:19:00,H&M,clothing,303,Credit Card
+2026-07-24 18:56:00,Uber,transportation,93,UPI
+2026-07-24 19:13:00,Behrouz Biryani,food_delivery,91,UPI
+2026-07-25 19:13:00,Behrouz Biryani,food_delivery,144,Credit Card
+2026-07-25 22:36:00,Behrouz Biryani,food_delivery,123,UPI
+2026-07-25 23:08:00,Domino's,food_delivery,87,Debit Card
+2026-07-25 23:54:00,Behrouz Biryani,food_delivery,135,Net Banking
+2026-07-26 09:40:00,Blinkit,groceries,161,Net Banking
+2026-07-26 12:08:00,Behrouz Biryani,food_delivery,128,UPI
+2026-07-26 13:46:00,DMart,groceries,343,Credit Card
+2026-07-26 15:19:00,Uber,transportation,65,Debit Card
+2026-07-26 15:43:00,Myntra,clothing,883,UPI
+2026-07-26 18:57:00,Cult.fit,fitness,337,UPI
+2026-07-26 20:47:00,Sephora,beauty,319,Credit Card
+2026-07-26 22:18:00,Domino's,food_delivery,106,UPI
+2026-07-27 11:45:00,Domino's,food_delivery,90,UPI
+2026-07-27 12:38:00,Ola,transportation,72,UPI
+2026-07-27 14:15:00,Mamaearth,beauty,346,UPI
+2026-07-27 23:38:00,Behrouz Biryani,food_delivery,124,UPI
+2026-07-28 00:45:00,Behrouz Biryani,food_delivery,114,Credit Card
+2026-07-28 19:02:00,DMart,groceries,437,UPI
+2026-07-28 22:46:00,Behrouz Biryani,food_delivery,88,Debit Card
+2026-07-29 11:03:00,The Body Shop,beauty,216,Debit Card
+2026-07-29 15:00:00,Box8,food_delivery,67,UPI
+2026-07-29 20:00:00,Nykaa,beauty,279,Net Banking
+2026-07-29 21:29:00,HealthifyMe,fitness,295,Debit Card
+2026-07-30 00:02:00,Behrouz Biryani,food_delivery,130,UPI
+2026-07-30 14:05:00,Rapido,transportation,71,Credit Card
+2026-07-30 14:42:00,Indian Oil Petrol Pump,transportation,105,Net Banking
+2026-07-30 15:20:00,Namma Metro,transportation,64,UPI
+2026-07-30 22:17:00,Behrouz Biryani,food_delivery,112,Debit Card
+2026-07-30 22:42:00,Zomato,food_delivery,86,UPI
+2026-07-31 01:01:00,Swiggy,food_delivery,77,UPI
+2026-07-31 01:51:00,Zomato,food_delivery,95,Debit Card
+2026-07-31 08:35:00,Ola,transportation,140,UPI
+2026-07-31 16:58:00,Swiggy,food_delivery,75,Debit Card
+2026-07-31 23:20:00,Behrouz Biryani,food_delivery,85,UPI
+2026-08-01 01:09:00,Swiggy,food_delivery,99,UPI
+2026-08-01 09:17:00,BigBasket,groceries,223,Credit Card
+2026-08-01 10:08:00,HealthifyMe,fitness,585,UPI
+2026-08-01 10:15:00,Domino's,food_delivery,88,Debit Card
+2026-08-01 11:03:00,PlayStation Store,entertainment,259,Credit Card
+2026-08-01 11:10:00,Swiggy,food_delivery,136,UPI
+2026-08-01 12:03:00,Ajio,clothing,560,UPI
+2026-08-01 19:16:00,RedBus,travel,360,UPI
+2026-08-01 19:20:00,The Body Shop,beauty,224,Credit Card
+2026-08-01 20:35:00,Namma Metro,transportation,117,Debit Card
+2026-08-01 20:39:00,H&M,clothing,452,Credit Card
+2026-08-01 21:58:00,Behrouz Biryani,food_delivery,97,UPI
+2026-08-01 23:38:00,Box8,food_delivery,87,UPI
+2026-08-02 00:06:00,Domino's,food_delivery,64,UPI
+2026-08-02 09:20:00,Behrouz Biryani,food_delivery,135,UPI
+2026-08-02 10:55:00,Zepto,groceries,175,UPI
+2026-08-02 11:14:00,Box8,food_delivery,102,UPI
+2026-08-02 12:11:00,Zara,clothing,520,Debit Card
+2026-08-02 12:34:00,Ola,transportation,73,Net Banking
+2026-08-02 16:15:00,Swiggy,food_delivery,64,UPI
+2026-08-02 19:56:00,Namma Metro,transportation,48,Credit Card
+2026-08-02 21:20:00,Nykaa,beauty,467,UPI
+2026-08-03 09:11:00,Box8,food_delivery,128,UPI
+2026-08-03 09:42:00,Uber,transportation,84,Debit Card
+2026-08-03 10:41:00,Nykaa,beauty,284,UPI
 2026-08-03 15:21:00,Netflix,subscriptions,649,Credit Card
-2026-08-03 19:36:00,Domino's,food_delivery,97,Debit Card
-2026-08-03 21:15:00,Behrouz Biryani,food_delivery,130,Credit Card
-2026-08-04 08:57:00,PVR Cinemas,entertainment,180,UPI
-2026-08-04 12:06:00,Behrouz Biryani,food_delivery,96,Net Banking
-2026-08-04 15:30:00,PVR Cinemas,entertainment,192,UPI
+2026-08-03 17:34:00,Indian Oil Petrol Pump,transportation,111,Debit Card
+2026-08-03 22:50:00,Behrouz Biryani,food_delivery,97,Credit Card
+2026-08-04 01:20:00,Behrouz Biryani,food_delivery,85,UPI
+2026-08-04 08:56:00,Namma Metro,transportation,30,Debit Card
+2026-08-04 11:28:00,Namma Metro,transportation,81,UPI
+2026-08-04 15:37:00,Box8,food_delivery,88,Net Banking
+2026-08-04 19:49:00,Zomato,food_delivery,92,UPI
+2026-08-05 10:05:00,Blinkit,groceries,201,Debit Card
 2026-08-05 11:54:00,Spotify Premium,subscriptions,119,Credit Card
-2026-08-05 13:00:00,Swiggy,food_delivery,104,Credit Card
-2026-08-05 15:19:00,Ola,transportation,93,UPI
-2026-08-05 20:36:00,Mamaearth,beauty,161,Credit Card
-2026-08-06 09:20:00,Blinkit,groceries,146,UPI
-2026-08-06 09:23:00,Zomato,food_delivery,72,Credit Card
-2026-08-06 13:50:00,Steam,entertainment,147,Debit Card
-2026-08-06 14:28:00,Rapido,transportation,110,UPI
-2026-08-06 16:56:00,Swiggy,food_delivery,87,UPI
-2026-08-06 17:48:00,DMart,groceries,127,Debit Card
-2026-08-06 19:39:00,Uber,transportation,61,UPI
-2026-08-06 20:18:00,Instamart,groceries,218,UPI
-2026-08-07 09:32:00,Behrouz Biryani,food_delivery,92,UPI
-2026-08-07 11:23:00,Purplle,beauty,561,Credit Card
-2026-08-07 11:53:00,Box8,food_delivery,122,UPI
-2026-08-07 13:52:00,PVR Cinemas,entertainment,286,UPI
-2026-08-07 15:33:00,Ola,transportation,94,UPI
-2026-08-07 17:12:00,Mamaearth,beauty,325,Debit Card
-2026-08-07 18:16:00,Box8,food_delivery,113,UPI
-2026-08-07 21:47:00,Instamart,groceries,291,Credit Card
-2026-08-07 22:13:00,BigBasket,groceries,199,Credit Card
-2026-08-08 00:17:00,Domino's,food_delivery,144,UPI
-2026-08-08 08:11:00,Instamart,groceries,170,UPI
-2026-08-08 12:08:00,Swiggy,food_delivery,112,UPI
-2026-08-08 12:29:00,Blinkit,groceries,154,Net Banking
+2026-08-05 17:04:00,Ajio,clothing,593,UPI
+2026-08-05 18:00:00,Domino's,food_delivery,80,Debit Card
+2026-08-05 20:34:00,Zomato,food_delivery,98,UPI
+2026-08-06 08:01:00,PlayStation Store,entertainment,325,Credit Card
+2026-08-06 13:00:00,INOX,entertainment,281,UPI
+2026-08-06 15:52:00,Instamart,groceries,220,UPI
+2026-08-06 23:32:00,Zomato,food_delivery,124,UPI
+2026-08-07 01:34:00,Box8,food_delivery,112,Credit Card
+2026-08-07 08:11:00,H&M,clothing,608,UPI
+2026-08-07 12:02:00,Box8,food_delivery,78,Debit Card
+2026-08-07 13:30:00,Purplle,beauty,292,UPI
+2026-08-07 14:40:00,Uber,transportation,52,Debit Card
+2026-08-07 22:17:00,Domino's,food_delivery,55,Net Banking
+2026-08-08 10:40:00,RedBus,travel,478,UPI
+2026-08-08 11:44:00,Namma Metro,transportation,96,Debit Card
 2026-08-08 13:48:00,iCloud+,subscriptions,75,Credit Card
-2026-08-08 15:52:00,Ola,transportation,80,UPI
-2026-08-08 16:14:00,Domino's,food_delivery,93,UPI
-2026-08-08 19:39:00,Rapido,transportation,62,UPI
-2026-08-08 20:48:00,Instamart,groceries,139,UPI
-2026-08-08 21:01:00,Behrouz Biryani,food_delivery,107,Debit Card
-2026-08-08 22:03:00,Nykaa,beauty,297,Net Banking
-2026-08-08 22:31:00,Domino's,food_delivery,90,Credit Card
-2026-08-09 15:26:00,Behrouz Biryani,food_delivery,65,Credit Card
-2026-08-09 15:44:00,Rapido,transportation,98,UPI
-2026-08-09 17:38:00,Box8,food_delivery,113,UPI
-2026-08-09 21:51:00,Box8,food_delivery,127,Credit Card
-2026-08-09 22:05:00,Domino's,food_delivery,69,UPI
-2026-08-09 22:17:00,Instamart,groceries,138,Debit Card
-2026-08-09 23:02:00,Box8,food_delivery,60,Debit Card
-2026-08-10 01:56:00,Domino's,food_delivery,106,Net Banking
-2026-08-10 12:15:00,Rapido,transportation,93,Debit Card
-2026-08-10 13:44:00,Indian Oil Petrol Pump,transportation,101,Net Banking
-2026-08-10 14:02:00,BigBasket,groceries,279,UPI
-2026-08-10 14:35:00,Steam,entertainment,112,UPI
-2026-08-10 20:49:00,Namma Metro,transportation,161,Credit Card
-2026-08-10 23:53:00,Box8,food_delivery,111,UPI
-2026-08-11 08:27:00,Purplle,beauty,442,UPI
-2026-08-11 10:46:00,Ajio,clothing,334,UPI
-2026-08-11 11:21:00,Mamaearth,beauty,244,UPI
-2026-08-11 12:16:00,Zepto,groceries,302,Credit Card
-2026-08-11 12:24:00,PVR Cinemas,entertainment,126,UPI
-2026-08-11 17:22:00,Domino's,food_delivery,114,UPI
-2026-08-11 18:56:00,DMart,groceries,262,UPI
-2026-08-12 01:11:00,Domino's,food_delivery,68,Net Banking
-2026-08-12 01:12:00,Domino's,food_delivery,77,UPI
-2026-08-12 15:07:00,Zara,clothing,262,UPI
-2026-08-12 15:32:00,BookMyShow,entertainment,171,UPI
-2026-08-12 16:58:00,Uber,transportation,94,UPI
+2026-08-08 14:25:00,Steam,entertainment,244,Credit Card
+2026-08-08 15:23:00,INOX,entertainment,108,Credit Card
+2026-08-08 16:20:00,Myntra,clothing,553,UPI
+2026-08-08 16:40:00,Behrouz Biryani,food_delivery,82,Net Banking
+2026-08-08 16:54:00,Indian Oil Petrol Pump,transportation,68,Net Banking
+2026-08-08 19:54:00,Box8,food_delivery,67,UPI
+2026-08-08 20:54:00,BookMyShow,entertainment,115,UPI
+2026-08-09 08:45:00,Nykaa,beauty,411,Debit Card
+2026-08-09 11:13:00,Purplle,beauty,205,Debit Card
+2026-08-09 13:35:00,Rapido,transportation,121,Credit Card
+2026-08-09 14:21:00,Box8,food_delivery,125,UPI
+2026-08-09 14:57:00,Cult.fit,fitness,191,Debit Card
+2026-08-09 16:06:00,Swiggy,food_delivery,115,Credit Card
+2026-08-09 17:12:00,Purplle,beauty,357,Debit Card
+2026-08-09 17:55:00,Behrouz Biryani,food_delivery,63,UPI
+2026-08-09 18:23:00,Zepto,groceries,115,UPI
+2026-08-09 22:22:00,Domino's,food_delivery,71,Debit Card
+2026-08-10 01:53:00,Swiggy,food_delivery,71,UPI
+2026-08-10 10:58:00,BookMyShow,entertainment,102,Credit Card
+2026-08-10 15:00:00,Namma Metro,transportation,103,Net Banking
+2026-08-10 19:36:00,Domino's,food_delivery,97,Debit Card
+2026-08-10 21:15:00,Behrouz Biryani,food_delivery,130,Credit Card
+2026-08-11 08:57:00,PVR Cinemas,entertainment,180,UPI
+2026-08-11 09:36:00,Steam,entertainment,282,UPI
+2026-08-11 12:06:00,Behrouz Biryani,food_delivery,96,Net Banking
+2026-08-11 15:30:00,PVR Cinemas,entertainment,192,UPI
+2026-08-12 13:00:00,Swiggy,food_delivery,104,Credit Card
+2026-08-12 15:19:00,Ola,transportation,93,UPI
 2026-08-12 18:37:00,Amazon Prime,subscriptions,299,Credit Card
-2026-08-13 12:41:00,BigBasket,groceries,90,Net Banking
-2026-08-13 13:17:00,RedBus,travel,908,UPI
-2026-08-13 13:41:00,Rapido,transportation,71,Credit Card
-2026-08-13 17:41:00,Instamart,groceries,239,UPI
-2026-08-13 18:19:00,BookMyShow,entertainment,196,UPI
-2026-08-13 22:09:00,Behrouz Biryani,food_delivery,106,Credit Card
-2026-08-14 00:47:00,Behrouz Biryani,food_delivery,87,Net Banking
-2026-08-14 01:16:00,Zomato,food_delivery,96,Credit Card
-2026-08-14 10:11:00,Instamart,groceries,310,Debit Card
-2026-08-14 18:09:00,BookMyShow,entertainment,172,UPI
-2026-08-14 21:53:00,Box8,food_delivery,117,Credit Card
-2026-08-14 22:07:00,Box8,food_delivery,149,UPI
-2026-08-15 08:22:00,Croma,electronics,693,Net Banking
-2026-08-15 08:35:00,Domino's,food_delivery,78,UPI
-2026-08-15 11:05:00,Box8,food_delivery,109,UPI
-2026-08-15 11:36:00,PVR Cinemas,entertainment,139,Credit Card
-2026-08-15 12:28:00,Ola,transportation,132,Credit Card
-2026-08-15 12:51:00,BigBasket,groceries,234,UPI
-2026-08-15 13:06:00,Swiggy,food_delivery,112,UPI
-2026-08-15 16:06:00,Namma Metro,transportation,92,UPI
-2026-08-15 16:16:00,DMart,groceries,158,UPI
-2026-08-15 20:57:00,Rapido,transportation,59,UPI
-2026-08-15 22:43:00,Box8,food_delivery,100,UPI
-2026-08-16 11:52:00,Zepto,groceries,159,UPI
-2026-08-16 11:54:00,Ola,transportation,73,Credit Card
-2026-08-16 19:10:00,Zara,clothing,940,Credit Card
-2026-08-17 00:09:00,Swiggy,food_delivery,89,UPI
-2026-08-17 08:04:00,Sephora,beauty,602,Credit Card
-2026-08-17 12:13:00,Namma Metro,transportation,60,Credit Card
-2026-08-17 16:18:00,BigBasket,groceries,303,UPI
-2026-08-17 17:10:00,Purplle,beauty,306,Credit Card
-2026-08-17 17:19:00,Instamart,groceries,373,Credit Card
-2026-08-18 00:11:00,Zomato,food_delivery,90,UPI
-2026-08-18 00:38:00,Box8,food_delivery,79,UPI
-2026-08-18 08:26:00,Ola,transportation,99,Credit Card
-2026-08-18 12:37:00,HealthifyMe,fitness,530,Credit Card
+2026-08-12 20:36:00,Mamaearth,beauty,161,Credit Card
+2026-08-13 09:20:00,Blinkit,groceries,146,UPI
+2026-08-13 09:23:00,Zomato,food_delivery,72,Credit Card
+2026-08-13 13:50:00,Steam,entertainment,147,Debit Card
+2026-08-13 14:28:00,Rapido,transportation,110,UPI
+2026-08-13 16:56:00,Swiggy,food_delivery,87,UPI
+2026-08-13 17:48:00,DMart,groceries,127,Debit Card
+2026-08-13 19:39:00,Uber,transportation,61,UPI
+2026-08-13 20:18:00,Instamart,groceries,218,UPI
+2026-08-14 09:32:00,Behrouz Biryani,food_delivery,92,UPI
+2026-08-14 11:23:00,Purplle,beauty,561,Credit Card
+2026-08-14 11:53:00,Box8,food_delivery,122,UPI
+2026-08-14 13:52:00,PVR Cinemas,entertainment,286,UPI
+2026-08-14 15:33:00,Ola,transportation,94,UPI
+2026-08-14 17:12:00,Mamaearth,beauty,325,Debit Card
+2026-08-14 18:16:00,Box8,food_delivery,113,UPI
+2026-08-14 21:47:00,Instamart,groceries,291,Credit Card
+2026-08-14 22:13:00,BigBasket,groceries,199,Credit Card
+2026-08-15 00:17:00,Domino's,food_delivery,144,UPI
+2026-08-15 08:11:00,Instamart,groceries,170,UPI
+2026-08-15 12:08:00,Swiggy,food_delivery,112,UPI
+2026-08-15 12:29:00,Blinkit,groceries,154,Net Banking
+2026-08-15 15:52:00,Ola,transportation,80,UPI
+2026-08-15 16:14:00,Domino's,food_delivery,93,UPI
+2026-08-15 19:39:00,Rapido,transportation,62,UPI
+2026-08-15 20:48:00,Instamart,groceries,139,UPI
+2026-08-15 21:01:00,Behrouz Biryani,food_delivery,107,Debit Card
+2026-08-15 22:03:00,Nykaa,beauty,297,Net Banking
+2026-08-15 22:31:00,Domino's,food_delivery,90,Credit Card
+2026-08-16 15:26:00,Behrouz Biryani,food_delivery,65,Credit Card
+2026-08-16 15:44:00,Rapido,transportation,98,UPI
+2026-08-16 17:38:00,Box8,food_delivery,113,UPI
+2026-08-16 21:51:00,Box8,food_delivery,127,Credit Card
+2026-08-16 22:05:00,Domino's,food_delivery,69,UPI
+2026-08-16 22:17:00,Instamart,groceries,138,Debit Card
+2026-08-16 23:02:00,Box8,food_delivery,60,Debit Card
+2026-08-17 01:56:00,Domino's,food_delivery,106,Net Banking
+2026-08-17 12:15:00,Rapido,transportation,93,Debit Card
+2026-08-17 13:44:00,Indian Oil Petrol Pump,transportation,101,Net Banking
+2026-08-17 14:02:00,BigBasket,groceries,279,UPI
+2026-08-17 14:35:00,Steam,entertainment,112,UPI
+2026-08-17 20:49:00,Namma Metro,transportation,161,Credit Card
+2026-08-17 23:53:00,Box8,food_delivery,111,UPI
+2026-08-18 08:27:00,Purplle,beauty,442,UPI
+2026-08-18 10:46:00,Ajio,clothing,334,UPI
+2026-08-18 11:21:00,Mamaearth,beauty,244,UPI
+2026-08-18 12:16:00,Zepto,groceries,302,Credit Card
+2026-08-18 12:24:00,PVR Cinemas,entertainment,126,UPI
 2026-08-18 15:26:00,YouTube Premium,subscriptions,149,Credit Card
-2026-08-18 16:49:00,Behrouz Biryani,food_delivery,110,UPI
-2026-08-18 17:16:00,Box8,food_delivery,74,UPI
-2026-08-18 18:13:00,Box8,food_delivery,137,UPI
-2026-08-18 23:55:00,Swiggy,food_delivery,78,UPI
-2026-08-19 12:20:00,Box8,food_delivery,52,UPI
-2026-08-19 17:03:00,Zepto,groceries,293,Debit Card
-2026-08-19 18:03:00,Uber,transportation,48,UPI
-2026-08-19 22:08:00,IndiGo,travel,1482,Credit Card
-2026-08-19 23:46:00,Domino's,food_delivery,65,UPI
-2026-08-20 08:08:00,Zomato,food_delivery,66,UPI
-2026-08-20 10:14:00,Namma Metro,transportation,110,UPI
-2026-08-20 10:41:00,Zomato,food_delivery,67,Credit Card
-2026-08-20 12:54:00,BigBasket,groceries,303,Debit Card
-2026-08-20 13:34:00,Namma Metro,transportation,88,UPI
-2026-08-20 19:15:00,Zomato,food_delivery,93,UPI
-2026-08-20 21:05:00,Rapido,transportation,76,UPI
-2026-08-20 22:32:00,Behrouz Biryani,food_delivery,74,Credit Card
-2026-08-21 11:16:00,Domino's,food_delivery,70,UPI
-2026-08-21 12:47:00,Ola,transportation,70,Debit Card
-2026-08-21 14:07:00,BookMyShow,entertainment,128,UPI
-2026-08-21 14:11:00,Blinkit,groceries,273,Credit Card
-2026-08-21 21:46:00,Box8,food_delivery,97,UPI
-2026-08-21 22:24:00,Nykaa,beauty,357,UPI
-2026-08-22 10:37:00,HealthifyMe,fitness,437,Credit Card
-2026-08-22 11:20:00,Zomato,food_delivery,74,UPI
-2026-08-22 12:04:00,Swiggy,food_delivery,65,UPI
-2026-08-22 20:24:00,Rapido,transportation,82,UPI
-2026-08-23 08:28:00,Nykaa,beauty,576,UPI
-2026-08-23 10:24:00,Domino's,food_delivery,103,UPI
-2026-08-23 13:42:00,H&M,clothing,683,UPI
-2026-08-23 13:44:00,The Body Shop,beauty,605,UPI
-2026-08-24 11:28:00,Amazon,electronics,13058,UPI
-2026-08-24 17:28:00,Steam,entertainment,164,Credit Card
-2026-08-24 22:55:00,Swiggy,food_delivery,100,Debit Card
-2026-08-24 23:00:00,Zomato,food_delivery,66,UPI
-2026-08-25 00:38:00,Swiggy,food_delivery,88,UPI
-2026-08-25 00:48:00,Domino's,food_delivery,94,UPI
-2026-08-25 10:20:00,Rapido,transportation,68,Credit Card
-2026-08-25 11:19:00,Zomato,food_delivery,84,Debit Card
-2026-08-25 12:34:00,Uber,transportation,69,Credit Card
-2026-08-25 15:02:00,Box8,food_delivery,89,Debit Card
-2026-08-25 15:06:00,H&M,clothing,322,UPI
-2026-08-25 15:08:00,Box8,food_delivery,105,Credit Card
-2026-08-25 15:55:00,Swiggy,food_delivery,84,Credit Card
-2026-08-26 00:20:00,Swiggy,food_delivery,86,UPI
-2026-08-26 08:36:00,INOX,entertainment,166,Credit Card
-2026-08-26 08:50:00,Blinkit,groceries,102,Debit Card
-2026-08-26 11:57:00,Behrouz Biryani,food_delivery,70,UPI
-2026-08-26 14:48:00,Zepto,groceries,385,Credit Card
-2026-08-26 15:49:00,Uber,transportation,45,UPI
-2026-08-26 19:38:00,INOX,entertainment,125,UPI
-2026-08-26 21:24:00,BigBasket,groceries,325,UPI
-2026-08-26 21:43:00,Indian Oil Petrol Pump,transportation,46,Credit Card
-2026-08-27 08:15:00,BigBasket,groceries,316,Credit Card
-2026-08-27 10:19:00,Myntra,clothing,808,Credit Card
-2026-08-27 12:02:00,Ola,transportation,120,Credit Card
-2026-08-27 17:46:00,Box8,food_delivery,60,Debit Card
-2026-08-27 22:44:00,Domino's,food_delivery,99,UPI
-2026-08-28 09:36:00,Rapido,transportation,116,UPI
-2026-08-29 01:33:00,Behrouz Biryani,food_delivery,101,Credit Card
-2026-08-29 08:57:00,PVR Cinemas,entertainment,239,Credit Card
-2026-08-29 12:31:00,Swiggy,food_delivery,128,UPI
-2026-08-29 14:50:00,Indian Oil Petrol Pump,transportation,74,UPI
-2026-08-29 15:49:00,Rapido,transportation,128,UPI
-2026-08-29 15:57:00,Instamart,groceries,98,UPI
-2026-08-29 16:11:00,Instamart,groceries,281,Credit Card
-2026-08-29 17:13:00,Zomato,food_delivery,108,Credit Card
-2026-08-29 17:29:00,Namma Metro,transportation,59,Credit Card
-2026-08-29 17:40:00,Mamaearth,beauty,476,UPI
-2026-08-29 18:06:00,Nykaa,beauty,314,UPI
-2026-08-29 18:14:00,Decathlon,fitness,770,Debit Card
-2026-08-29 20:10:00,Indian Oil Petrol Pump,transportation,94,UPI
-2026-08-30 11:02:00,Instamart,groceries,114,Net Banking
-2026-08-30 12:58:00,Blinkit,groceries,304,UPI
-2026-08-30 16:22:00,Myntra,clothing,479,Debit Card
-2026-08-30 16:54:00,Apple Store,electronics,946,Credit Card
-2026-08-30 18:04:00,The Body Shop,beauty,339,UPI
-2026-08-30 19:26:00,Mamaearth,beauty,269,UPI
-2026-08-30 19:36:00,Box8,food_delivery,65,UPI
-2026-08-30 19:50:00,HealthifyMe,fitness,566,UPI
-2026-08-30 21:14:00,DMart,groceries,406,UPI
-2026-08-30 21:47:00,Namma Metro,transportation,137,UPI
-2026-08-31 15:36:00,Box8,food_delivery,81,UPI
-2026-08-31 17:33:00,Domino's,food_delivery,128,UPI
-2026-08-31 20:20:00,Nykaa,beauty,405,Debit Card
-2026-08-31 23:13:00,Domino's,food_delivery,77,Credit Card
+2026-08-18 17:22:00,Domino's,food_delivery,114,UPI
+2026-08-18 18:56:00,DMart,groceries,262,UPI
+2026-08-19 01:11:00,Domino's,food_delivery,68,Net Banking
+2026-08-19 01:12:00,Domino's,food_delivery,77,UPI
+2026-08-19 15:07:00,Zara,clothing,262,UPI
+2026-08-19 15:32:00,BookMyShow,entertainment,171,UPI
+2026-08-19 16:58:00,Uber,transportation,94,UPI
+2026-08-20 12:41:00,BigBasket,groceries,90,Net Banking
+2026-08-20 13:17:00,RedBus,travel,908,UPI
+2026-08-20 13:41:00,Rapido,transportation,71,Credit Card
+2026-08-20 17:41:00,Instamart,groceries,239,UPI
+2026-08-20 18:19:00,BookMyShow,entertainment,196,UPI
+2026-08-20 22:09:00,Behrouz Biryani,food_delivery,106,Credit Card
+2026-08-21 00:47:00,Behrouz Biryani,food_delivery,87,Net Banking
+2026-08-21 01:16:00,Zomato,food_delivery,96,Credit Card
+2026-08-21 10:11:00,Instamart,groceries,310,Debit Card
+2026-08-21 18:09:00,BookMyShow,entertainment,172,UPI
+2026-08-21 21:53:00,Box8,food_delivery,117,Credit Card
+2026-08-21 22:07:00,Box8,food_delivery,149,UPI
+2026-08-22 08:22:00,Croma,electronics,693,Net Banking
+2026-08-22 08:35:00,Domino's,food_delivery,78,UPI
+2026-08-22 11:05:00,Box8,food_delivery,109,UPI
+2026-08-22 11:36:00,PVR Cinemas,entertainment,139,Credit Card
+2026-08-22 12:28:00,Ola,transportation,132,Credit Card
+2026-08-22 12:51:00,BigBasket,groceries,234,UPI
+2026-08-22 13:06:00,Swiggy,food_delivery,112,UPI
+2026-08-22 16:06:00,Namma Metro,transportation,92,UPI
+2026-08-22 16:16:00,DMart,groceries,158,UPI
+2026-08-22 20:57:00,Rapido,transportation,59,UPI
+2026-08-22 22:43:00,Box8,food_delivery,100,UPI
+2026-08-23 11:52:00,Zepto,groceries,159,UPI
+2026-08-23 11:54:00,Ola,transportation,73,Credit Card
+2026-08-23 19:10:00,Zara,clothing,940,Credit Card
+2026-08-24 00:09:00,Swiggy,food_delivery,89,UPI
+2026-08-24 08:04:00,Sephora,beauty,602,Credit Card
+2026-08-24 12:13:00,Namma Metro,transportation,60,Credit Card
+2026-08-24 16:18:00,BigBasket,groceries,303,UPI
+2026-08-24 17:10:00,Purplle,beauty,306,Credit Card
+2026-08-24 17:19:00,Instamart,groceries,373,Credit Card
+2026-08-25 00:11:00,Zomato,food_delivery,90,UPI
+2026-08-25 00:38:00,Box8,food_delivery,79,UPI
+2026-08-25 08:26:00,Ola,transportation,99,Credit Card
+2026-08-25 12:37:00,HealthifyMe,fitness,530,Credit Card
+2026-08-25 16:49:00,Behrouz Biryani,food_delivery,110,UPI
+2026-08-25 17:16:00,Box8,food_delivery,74,UPI
+2026-08-25 18:13:00,Box8,food_delivery,137,UPI
+2026-08-25 23:55:00,Swiggy,food_delivery,78,UPI
+2026-08-26 12:20:00,Box8,food_delivery,52,UPI
+2026-08-26 17:03:00,Zepto,groceries,293,Debit Card
+2026-08-26 18:03:00,Uber,transportation,48,UPI
+2026-08-26 22:08:00,IndiGo,travel,1482,Credit Card
+2026-08-26 23:46:00,Domino's,food_delivery,65,UPI
+2026-08-27 08:08:00,Zomato,food_delivery,66,UPI
+2026-08-27 10:14:00,Namma Metro,transportation,110,UPI
+2026-08-27 10:41:00,Zomato,food_delivery,67,Credit Card
+2026-08-27 12:54:00,BigBasket,groceries,303,Debit Card
+2026-08-27 13:34:00,Namma Metro,transportation,88,UPI
+2026-08-27 19:15:00,Zomato,food_delivery,93,UPI
+2026-08-27 21:05:00,Rapido,transportation,76,UPI
+2026-08-27 22:32:00,Behrouz Biryani,food_delivery,74,Credit Card
+2026-08-28 11:16:00,Domino's,food_delivery,70,UPI
+2026-08-28 12:47:00,Ola,transportation,70,Debit Card
+2026-08-28 14:07:00,BookMyShow,entertainment,128,UPI
+2026-08-28 14:11:00,Blinkit,groceries,273,Credit Card
+2026-08-28 21:46:00,Box8,food_delivery,97,UPI
+2026-08-28 22:24:00,Nykaa,beauty,357,UPI
+2026-08-29 10:37:00,HealthifyMe,fitness,437,Credit Card
+2026-08-29 11:20:00,Zomato,food_delivery,74,UPI
+2026-08-29 12:04:00,Swiggy,food_delivery,65,UPI
+2026-08-29 20:24:00,Rapido,transportation,82,UPI
+2026-08-30 08:28:00,Nykaa,beauty,576,UPI
+2026-08-30 10:24:00,Domino's,food_delivery,103,UPI
+2026-08-30 13:42:00,H&M,clothing,683,UPI
+2026-08-30 13:44:00,The Body Shop,beauty,605,UPI
+2026-08-31 17:28:00,Steam,entertainment,164,Credit Card
+2026-08-31 22:55:00,Swiggy,food_delivery,100,Debit Card
+2026-08-31 23:00:00,Zomato,food_delivery,66,UPI
+2026-09-01 00:38:00,Swiggy,food_delivery,88,UPI
+2026-09-01 00:48:00,Domino's,food_delivery,94,UPI
+2026-09-01 10:20:00,Rapido,transportation,68,Credit Card
+2026-09-01 11:19:00,Zomato,food_delivery,84,Debit Card
+2026-09-01 12:34:00,Uber,transportation,69,Credit Card
+2026-09-01 15:02:00,Box8,food_delivery,89,Debit Card
+2026-09-01 15:06:00,H&M,clothing,322,UPI
+2026-09-01 15:08:00,Box8,food_delivery,105,Credit Card
+2026-09-01 15:55:00,Swiggy,food_delivery,84,Credit Card

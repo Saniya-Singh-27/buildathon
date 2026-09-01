@@ -17,6 +17,7 @@ BUY_MAX = 1       # score <= this -> BUY
 WAIT_MAX = 4       # score <= this -> WAIT, above it -> DONT_BUY
 
 BUDGET_EXHAUSTED_POINTS = 3
+BUDGET_MOST_OF_REMAINING_POINTS = 3  # budget_percentage >= 75 - wipes out the month
 BUDGET_HIGH_PCT_POINTS = 2       # budget_percentage >= 50
 BUDGET_MED_PCT_POINTS = 1        # budget_percentage >= 25
 
@@ -35,6 +36,14 @@ def _pretty_category(category: str) -> str:
 
 
 def _check_budget(analysis: dict) -> tuple[int, str | None]:
+    # Essentials (groceries, getting to work) are not discretionary spending,
+    # so the fun-money budget is simply the wrong yardstick for them - without
+    # this, the app told you not to buy groceries because you'd overspent on
+    # clothes. They're still subject to every other check, so a wildly
+    # oversized grocery run is still caught, just not by this one.
+    if analysis.get("is_essential_category"):
+        return 0, None
+
     if analysis["budget_already_exhausted"]:
         over_by = abs(analysis["remaining_discretionary_budget"])
         return (
@@ -45,6 +54,21 @@ def _check_budget(analysis: dict) -> tuple[int, str | None]:
     bp = analysis["budget_percentage"]
     if bp is None:
         return 0, None
+    # A purchase that swallows most of what's left is as serious as having
+    # nothing left. Without this band the scale capped at 2 points, so spending
+    # 300% of the remaining budget in one go scored the same as spending 50%,
+    # and nothing short of an already-blown budget could reach DON'T BUY.
+    if bp >= 100:
+        return (
+            BUDGET_MOST_OF_REMAINING_POINTS,
+            f"this one purchase costs more than your entire remaining fun budget "
+            f"({bp:.0f}% of it)",
+        )
+    if bp >= 75:
+        return (
+            BUDGET_MOST_OF_REMAINING_POINTS,
+            f"this would swallow {bp:.0f}% of your remaining fun budget for the month",
+        )
     if bp >= 50:
         return BUDGET_HIGH_PCT_POINTS, f"this purchase uses {bp:.0f}% of your remaining fun budget"
     if bp >= 25:
