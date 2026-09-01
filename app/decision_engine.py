@@ -16,10 +16,14 @@ the brief's "prioritize interpretability over mathematical complexity."
 BUY_MAX = 1       # score <= this -> BUY
 WAIT_MAX = 4       # score <= this -> WAIT, above it -> DONT_BUY
 
-BUDGET_EXHAUSTED_POINTS = 3
-BUDGET_MOST_OF_REMAINING_POINTS = 3  # budget_percentage >= 75 - wipes out the month
-BUDGET_HIGH_PCT_POINTS = 2       # budget_percentage >= 50
-BUDGET_MED_PCT_POINTS = 1        # budget_percentage >= 25
+# Budget is scored on how far AHEAD OF THE MONTH this purchase would put you,
+# not on the raw amount left. "Overshoot" is (budget used after this purchase)
+# minus (how far through the month you are), both as percentages - so being 90%
+# through the budget on the 28th scores nothing, while 90% on the 3rd scores
+# heavily. See _check_budget.
+BUDGET_OVERSHOOT_HIGH_POINTS = 3   # >= 50 points ahead of the month
+BUDGET_OVERSHOOT_MED_POINTS = 2    # >= 25
+BUDGET_OVERSHOOT_LOW_POINTS = 1    # >= 10
 
 DEVIATION_HIGH_POINTS = 2        # category_deviation_pct >= 75
 DEVIATION_MED_POINTS = 1         # category_deviation_pct >= 30
@@ -44,36 +48,35 @@ def _check_budget(analysis: dict) -> tuple[int, str | None]:
     if analysis.get("is_essential_category"):
         return 0, None
 
-    if analysis["budget_already_exhausted"]:
-        over_by = abs(analysis["remaining_discretionary_budget"])
-        return (
-            BUDGET_EXHAUSTED_POINTS,
-            f"you're already Rs {over_by:,.0f} over your discretionary budget this month",
-        )
+    # The budget is a monthly allowance, so the question isn't "how much is
+    # left" but "would this put you ahead of the month". Overshoot is the gap
+    # between the share of the budget you'd have used and the share of the
+    # month that has passed. Judged on remaining alone, 90% spent on the 3rd
+    # and 90% spent on the 28th look identical - only one of them is a problem.
+    used = analysis["budget_used_after_purchase_pct"]
+    elapsed = analysis["month_progress_pct"]
+    overshoot = analysis["budget_overshoot_pct"]
 
-    bp = analysis["budget_percentage"]
-    if bp is None:
+    if overshoot >= 50:
+        points = BUDGET_OVERSHOOT_HIGH_POINTS
+    elif overshoot >= 25:
+        points = BUDGET_OVERSHOOT_MED_POINTS
+    elif overshoot >= 10:
+        points = BUDGET_OVERSHOOT_LOW_POINTS
+    else:
         return 0, None
-    # A purchase that swallows most of what's left is as serious as having
-    # nothing left. Without this band the scale capped at 2 points, so spending
-    # 300% of the remaining budget in one go scored the same as spending 50%,
-    # and nothing short of an already-blown budget could reach DON'T BUY.
-    if bp >= 100:
-        return (
-            BUDGET_MOST_OF_REMAINING_POINTS,
-            f"this one purchase costs more than your entire remaining fun budget "
-            f"({bp:.0f}% of it)",
+
+    if used >= 100:
+        reason = (
+            f"this would put you at {used:.0f}% of your monthly fun budget - "
+            f"over the whole month's allowance, and you're only {elapsed:.0f}% through it"
         )
-    if bp >= 75:
-        return (
-            BUDGET_MOST_OF_REMAINING_POINTS,
-            f"this would swallow {bp:.0f}% of your remaining fun budget for the month",
+    else:
+        reason = (
+            f"this would put you at {used:.0f}% of your monthly fun budget "
+            f"when you're only {elapsed:.0f}% through the month"
         )
-    if bp >= 50:
-        return BUDGET_HIGH_PCT_POINTS, f"this purchase uses {bp:.0f}% of your remaining fun budget"
-    if bp >= 25:
-        return BUDGET_MED_PCT_POINTS, f"this purchase uses {bp:.0f}% of your remaining fun budget"
-    return 0, None
+    return points, reason
 
 
 def _check_deviation(analysis: dict) -> tuple[int, str | None]:

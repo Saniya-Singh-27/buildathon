@@ -9,6 +9,7 @@ DON'T BUY. Keeping the split means every figure the AI later talks about
 traces back to a specific, inspectable calculation here.
 """
 
+import calendar
 from datetime import timedelta
 
 import pandas as pd
@@ -124,6 +125,29 @@ def remaining_discretionary_budget(
     return float(discretionary_budget - discretionary_spend)
 
 
+def discretionary_spend_this_month(
+    df: pd.DataFrame, essential_categories: set, reference_date
+) -> float:
+    """Non-essential spend from the start of reference_date's month through reference_date."""
+    this_month = df[
+        (df["date"].dt.year == reference_date.year)
+        & (df["date"].dt.month == reference_date.month)
+        & (df["date"] <= reference_date)
+    ]
+    return float(this_month.loc[~this_month["category"].isin(essential_categories), "amount"].sum())
+
+
+def month_progress_pct(reference_date) -> float:
+    """How far through the calendar month reference_date is, as a percentage.
+
+    The budget is a monthly allowance, so "how much have you used" only means
+    something next to "how much of the month has gone". Being 90% through the
+    budget is unremarkable on the 28th and alarming on the 3rd.
+    """
+    days_in_month = calendar.monthrange(reference_date.year, reference_date.month)[1]
+    return float(reference_date.day / days_in_month * 100)
+
+
 def spending_deviation_pct(current_spend: float, normal_spend: float | None) -> float | None:
     """How far current-month category spend is from the historical monthly average, as a %.
 
@@ -161,6 +185,14 @@ def analyze_purchase(
     )
 
     budget_percentage = round(purchase_price / remaining_budget * 100, 1) if remaining_budget > 0 else None
+
+    # Budget consumption measured against how far through the month we are.
+    # Raw "budget remaining" can't tell 90% spent on the 3rd from 90% spent on
+    # the 28th, even though only one of those is a problem.
+    spent_so_far = discretionary_spend_this_month(df, essential_categories, reference_date)
+    progress_pct = month_progress_pct(reference_date)
+    used_after_pct = (spent_so_far + purchase_price) / discretionary_budget * 100
+    overshoot_pct = used_after_pct - progress_pct
     purchase_size_ratio = (
         round(purchase_price / avg_purchase_amount, 2) if avg_purchase_amount else None
     )
@@ -177,6 +209,10 @@ def analyze_purchase(
         "remaining_discretionary_budget": round(remaining_budget, 2),
         "budget_already_exhausted": remaining_budget <= 0,
         "budget_percentage": budget_percentage,
+        "discretionary_spend_this_month": round(spent_so_far, 2),
+        "month_progress_pct": round(progress_pct, 1),
+        "budget_used_after_purchase_pct": round(used_after_pct, 1),
+        "budget_overshoot_pct": round(overshoot_pct, 1),
         "category_spend_this_month": round(category_spend_this_month, 2),
         "normal_category_spend": round(normal_category_spend, 2) if normal_category_spend else None,
         "category_deviation_pct": spending_deviation_pct(category_spend_this_month, normal_category_spend),

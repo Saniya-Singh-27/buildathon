@@ -65,9 +65,9 @@ electronics**. Hit JUDGE ME.
 
 Red DON'T BUY. Point at the reasons:
 
-> "This would swallow 88% of my remaining fun budget, and it's 11.7 times what I
-> normally spend on electronics. Those aren't vibes — the app calculated both of
-> those numbers before the AI ever saw them."
+> "This would put me at 88% of my monthly fun budget when I'm only 3% through the
+> month, and it's 11.7 times what I normally spend on electronics. Those aren't
+> vibes — the app calculated every one of those numbers before the AI ever saw them."
 
 This is the centrepiece. Don't rush it.
 
@@ -166,3 +166,6 @@ A good one to have ready, because it shows the work was real:
   the spree, which made every spree look normal by definition.
 - The app told you not to buy groceries because you'd overspent on clothes — the
   fun-money budget was being applied to essential categories.
+- The budget was judged as one monthly pot, so 90% spent on the 3rd and 90% spent
+  on the 28th scored identically. It now measures how far ahead of the month you
+  are, which is what makes the headline line specific.

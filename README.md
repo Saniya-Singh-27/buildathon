@@ -88,16 +88,15 @@ The Spending Analyzer computes a set of features for the candidate purchase:
 - Similar purchases in the last 14 days, compared against the pace set *before* that window
 - How often this category is normally bought
 - This purchase's size versus the category's typical purchase
-- Discretionary ("fun") budget remaining
+- Discretionary ("fun") budget remaining, and how far through it you'd be
+  relative to how far through the month you are
 
 The Decision Engine turns those into concern points. Each check either fires or
 doesn't, and when it fires it produces the exact sentence shown to the user:
 
 | Check | Fires when | Points |
 |---|---|---|
-| Budget | discretionary budget already gone | 3 |
-| Budget | purchase costs more than everything left / >= 75% of it | 3 |
-| Budget | purchase is >= 50% / >= 25% of what's left | 2 / 1 |
+| Budget pace | buying this would put you >= 50 / >= 25 / >= 10 points further through your monthly budget than through the month itself | 3 / 2 / 1 |
 | Category deviation | this month is >= 75% / >= 30% above normal | 2 / 1 |
 | Recent purchases | recent pace well above / somewhat above the prior baseline | 2 / 1 |
 | Purchase size | >= 3x / >= 1.75x the category's typical purchase | 2 / 1 |
@@ -119,9 +118,13 @@ Three details worth pointing at, because they were bugs first:
   that window. Comparing it to an average that includes the window makes a spending
   burst look normal by definition — it inflates the very baseline it's measured
   against.
-- The budget bands go up to 3 points. Capped at 2, a purchase costing 300% of your
-  remaining budget scored the same as one costing 50%, and nothing short of an
-  already-blown budget could ever reach DON'T BUY.
+- The budget is scored against **how far through the month you are**, not against
+  the raw amount left. Judged on "remaining" alone, 90% of the budget spent on the
+  3rd and 90% spent on the 28th look identical — and only one of those is a
+  problem. Overshoot is the gap between the share of the budget you'd have used
+  after this purchase and the share of the month that has passed, which is also
+  why the app can say something as specific as "this would put you at 88% of your
+  monthly fun budget when you're only 3% through the month."
 
 ---
 
@@ -229,7 +232,7 @@ Cases 1-4 are typed straight into the app, no date juggling needed.
 |---|---|---|---|
 | 1 | Comfortably affordable | Zomato order, Rs 250, food delivery | BUY, score 1 |
 | 2 | Large for its category | Black blazer, Rs 3,499, clothing | WAIT, score 2, "6.0x what you'd normally spend on clothing" |
-| 3 | Wipes out the month | Sony headphones, Rs 29,999, electronics | DON'T BUY, score 5, "swallow 88% of your remaining fun budget" |
+| 3 | Way ahead of the month | Sony headphones, Rs 29,999, electronics | DON'T BUY, score 5, "88% of your monthly fun budget when you're only 3% through the month" |
 | 4 | Essentials aren't punished | Groceries, Rs 900, groceries | WAIT on size only — never blamed on the fun budget |
 | 5 | Screenshot, no API key | Upload any image, click Analyze | Warns that no key is set, manual entry still works |
 | 6 | Screenshot, bad key | Set an invalid `GEMINI_API_KEY`, click Analyze | Shows the real API error, manual entry still works |

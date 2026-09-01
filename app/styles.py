@@ -138,11 +138,23 @@ CUSTOM_CSS = """
         font-weight: 800;
         color: white;
         margin-bottom: 1.2rem;
+        letter-spacing: 0.5px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
 
+    /* Verdict banners carry weight so they read as an alert rather than more
+       chrome - important now that the whole app is berry-coloured. The
+       DON'T BUY red is deliberately pushed toward orange-red: the previous
+       #ef4444 sat only 5.5 Delta E from the brand Raspberry, so "red" had
+       stopped meaning "stop" and just looked like the rest of the app. This
+       one is 8.7 from the brand while still 17.8 from the amber WAIT banner,
+       which matters more - the three verdicts must be told apart from each
+       other before they're told apart from the background. All three carry
+       an icon and a word, so colour never carries the verdict alone. */
     .verdict-buy { background: linear-gradient(90deg, #22c55e, #16a34a); }
     .verdict-wait { background: linear-gradient(90deg, #f59e0b, #d97706); }
-    .verdict-dontbuy { background: linear-gradient(90deg, #ef4444, #dc2626); }
+    .verdict-dontbuy { background: linear-gradient(90deg, #f9430f, #c9260a); }
 
     .price-tag {
         text-align: center;
