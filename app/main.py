@@ -16,6 +16,7 @@ from pathlib import Path
 import streamlit as st
 
 import database
+import payments
 from ai_client import is_configured
 from ai_explanation import explain
 from data_loader import load_transactions, summary
@@ -59,6 +60,8 @@ DEFAULTS = {
     "explanation": None,
     "purchase_check_id": None,
     "user_decision": None,
+    "checkout_order": None,
+    "payment_result": None,
 }
 for key, value in DEFAULTS.items():
     if key not in st.session_state:
@@ -131,10 +134,18 @@ def _analyze_screenshot():
     if result["category"] in CATEGORY_LIST:
         st.session_state.category_input = result["category"]
     st.session_state.discount_input = result.get("discount_percentage") or 0.0
-    st.session_state.screenshot_message = (
-        "success",
-        "Got it - filled in the details below from your screenshot. Double check them before judging.",
-    )
+    if result.get("confident", True):
+        st.session_state.screenshot_message = (
+            "success",
+            "Got it - filled in the details below from your screenshot. "
+            "Double check them before judging.",
+        )
+    else:
+        st.session_state.screenshot_message = (
+            "warning",
+            "Read what I could from that screenshot, but it was a tricky one - "
+            "please check the details below carefully before judging.",
+        )
 
 
 def render_home():
@@ -234,6 +245,75 @@ def _record_decision(user_decision: str):
     if st.session_state.purchase_check_id is not None:
         database.record_user_decision(st.session_state.purchase_check_id, user_decision)
     st.session_state.user_decision = user_decision
+    if user_decision == "bought_anyway":
+        st.session_state.checkout_order = payments.create_order(
+            st.session_state.price, receipt=f"check_{st.session_state.purchase_check_id}"
+        )
+        st.session_state.payment_result = None
+    else:
+        st.session_state.checkout_order = None
+        st.session_state.payment_result = None
+
+
+def _pay_with_test_card(card: payments.TestCard):
+    """Run the simulated checkout and record the outcome, success or failure."""
+    order = st.session_state.checkout_order
+    if order is None:
+        return
+    result = payments.capture_payment(order, card)
+    database.save_payment(
+        purchase_check_id=st.session_state.purchase_check_id,
+        amount=result["amount_rupees"],
+        status=result["status"],
+        reference=result["id"],
+    )
+    st.session_state.payment_result = result
+
+
+def render_checkout():
+    """The simulated Razorpay test checkout, shown after 'buy anyway'."""
+    order = st.session_state.checkout_order
+    result = st.session_state.payment_result
+
+    with st.container(border=True):
+        st.markdown(
+            '<span class="test-badge">TEST MODE — SIMULATED, NO REAL MONEY MOVES</span>',
+            unsafe_allow_html=True,
+        )
+        st.markdown(f"**Checkout — ₹{order['amount_rupees']:,.2f}**")
+        st.caption(f"Order {order['id']} · {order['amount']} paise · {order['currency']}")
+
+        if result is None:
+            st.markdown("Pick a test card to simulate the outcome:")
+            for card in payments.TEST_CARDS:
+                cols = st.columns([3, 2])
+                with cols[0]:
+                    st.markdown(f"`{card.number}`")
+                    st.caption(card.note)
+                with cols[1]:
+                    st.button(
+                        f"Pay (TEST) — {card.label}",
+                        key=f"pay_{card.outcome}",
+                        use_container_width=True,
+                        on_click=_pay_with_test_card,
+                        args=(card,),
+                    )
+        elif result["status"] == "captured":
+            st.success(
+                f"Test payment captured — {result['id']} · card ending {result['card_last4']}. "
+                "Simulated only, nothing was actually charged."
+            )
+            st.caption("Recorded against this purchase check in the payments table.")
+        else:
+            st.error(
+                f"Test payment failed — {result['error_description']} "
+                f"(reference {result['id']})."
+            )
+            st.button("Try a different test card", on_click=_reset_payment)
+
+
+def _reset_payment():
+    st.session_state.payment_result = None
 
 
 def render_result():
@@ -296,7 +376,10 @@ def render_result():
     if st.session_state.user_decision == "waited":
         st.success("logged it. we'll see if you still want it in 72 hours.")
     elif st.session_state.user_decision == "bought_anyway":
-        st.info("noted, no judgement. test checkout gets wired up in the next phase.")
+        st.info("noted, no judgement. your money, your era.")
+
+    if st.session_state.checkout_order is not None:
+        render_checkout()
 
     st.caption(f"Saved to your history as check #{st.session_state.purchase_check_id}.")
     st.button("← Judge something else", on_click=go_home)

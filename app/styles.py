@@ -130,6 +130,19 @@ CUSTOM_CSS = """
         color: #f5d9ea;
     }
 
+    .test-badge {
+        display: inline-block;
+        background: #3b1650;
+        color: #ffd166;
+        border: 1px solid rgba(255, 209, 102, 0.4);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        padding: 0.2rem 0.7rem;
+        border-radius: 999px;
+        margin-bottom: 0.6rem;
+    }
+
     .ai-headline {
         text-align: center;
         font-size: 1.3rem;
