@@ -50,12 +50,27 @@ _EXTRACT_SCHEMA = {
         "confident": {
             "type": "BOOLEAN",
             "description": (
-                "False if this doesn't look like a real product/checkout screenshot, or "
-                "the product name/price aren't clearly legible."
+                "Set true if you could read a product name AND a price - that's all this "
+                "means. Screenshots are often cropped, compressed, dark-mode or partially "
+                "cut off, and that is fine: if you can still make out what's being bought "
+                "and roughly what it costs, you are confident. Only set false if the image "
+                "has no purchasable product in it at all, or no price is visible anywhere."
             ),
         },
     },
     "required": ["product_name", "price", "currency", "category", "discount_percentage", "confident"],
+    # Force the model to extract everything FIRST and judge its own confidence
+    # LAST. Without this, Gemini can emit `confident` before it has read the
+    # product name and price, so it's guessing at a self-assessment before
+    # doing the work - which is why it kept returning false on readable images.
+    "property_ordering": [
+        "product_name",
+        "price",
+        "currency",
+        "category",
+        "discount_percentage",
+        "confident",
+    ],
 }
 
 _CATEGORY_SCHEMA = {
@@ -84,7 +99,14 @@ def extract_from_screenshot(
             model=MODEL,
             contents=[
                 types.Part.from_bytes(data=image_bytes, mime_type=media_type),
-                "Read this product or checkout screenshot and record its details.",
+                (
+                    "This is a screenshot from an online shopping app or website - a product "
+                    "page, a cart, or a checkout screen. Find what the person is about to buy "
+                    "and what it costs, and record the details. Do your best even if the image "
+                    "is cropped, low quality, in dark mode, or in a language other than English. "
+                    "If several items are shown, use the main/most prominent one. Report the "
+                    "price as a plain number in whatever currency is shown."
+                ),
             ],
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
@@ -94,14 +116,26 @@ def extract_from_screenshot(
         result = _parse_json(response)
         if not result:
             return None, "Gemini returned an empty response."
-        if not result.get("confident", True):
-            return None, "Couldn't make out a product name and price in that image."
+
+        name = str(result.get("product_name") or "").strip()
+        price = float(result.get("price") or 0)
+
+        # Judge the extraction on what actually came back, not on the model's
+        # own `confident` flag. That flag is advisory and skews cautious on
+        # cropped or compressed screenshots it in fact read correctly - and
+        # throwing away a real product name and price because of it is worse
+        # than showing them. The fields are editable, and a low-confidence
+        # read is surfaced to the user rather than silently trusted.
+        if not name or price <= 0:
+            return None, "No product name or price visible in that image."
+
         return {
-            "product_name": str(result["product_name"]).strip(),
-            "price": float(result["price"]),
+            "product_name": name,
+            "price": price,
             "currency": result.get("currency") or "INR",
             "category": result.get("category") if result.get("category") in CATEGORY_LIST else None,
             "discount_percentage": float(result.get("discount_percentage") or 0),
+            "confident": bool(result.get("confident", True)),
         }, None
     except Exception as exc:
         return None, f"{type(exc).__name__} (model '{MODEL}'): {exc}"
