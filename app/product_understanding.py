@@ -67,10 +67,17 @@ _CATEGORY_SCHEMA = {
 }
 
 
-def extract_from_screenshot(image_bytes: bytes, media_type: str = "image/png") -> dict | None:
-    """Read a product/checkout screenshot. Returns a dict of fields, or None if unusable."""
+def extract_from_screenshot(
+    image_bytes: bytes, media_type: str = "image/png"
+) -> tuple[dict | None, str | None]:
+    """Read a product/checkout screenshot.
+
+    Returns (fields, error). Exactly one is ever set. The error string is
+    surfaced straight to the user - swallowing it silently made a wrong
+    model name, a rejected key and an unreadable image all look identical.
+    """
     if not is_configured():
-        return None
+        return None, "No GEMINI_API_KEY set."
     try:
         client = get_client()
         response = client.models.generate_content(
@@ -85,23 +92,30 @@ def extract_from_screenshot(image_bytes: bytes, media_type: str = "image/png") -
             ),
         )
         result = _parse_json(response)
-        if not result or not result.get("confident", True):
-            return None
+        if not result:
+            return None, "Gemini returned an empty response."
+        if not result.get("confident", True):
+            return None, "Couldn't make out a product name and price in that image."
         return {
             "product_name": str(result["product_name"]).strip(),
             "price": float(result["price"]),
             "currency": result.get("currency") or "INR",
             "category": result.get("category") if result.get("category") in CATEGORY_LIST else None,
             "discount_percentage": float(result.get("discount_percentage") or 0),
-        }
-    except Exception:
-        return None
+        }, None
+    except Exception as exc:
+        return None, f"{type(exc).__name__} (model '{MODEL}'): {exc}"
 
 
-def categorize_product(product_name: str) -> str | None:
-    """Guess a spending category for a manually-typed product name. Returns None if unavailable."""
-    if not is_configured() or not product_name.strip():
-        return None
+def categorize_product(product_name: str) -> tuple[str | None, str | None]:
+    """Guess a spending category for a manually-typed product name.
+
+    Returns (category, error), same convention as extract_from_screenshot.
+    """
+    if not is_configured():
+        return None, "No GEMINI_API_KEY set."
+    if not product_name.strip():
+        return None, "No product name given."
     try:
         client = get_client()
         response = client.models.generate_content(
@@ -114,9 +128,11 @@ def categorize_product(product_name: str) -> str | None:
         )
         result = _parse_json(response)
         category = result.get("category") if result else None
-        return category if category in CATEGORY_LIST else None
-    except Exception:
-        return None
+        if category not in CATEGORY_LIST:
+            return None, "Gemini didn't return a usable category."
+        return category, None
+    except Exception as exc:
+        return None, f"{type(exc).__name__} (model '{MODEL}'): {exc}"
 
 
 def _parse_json(response) -> dict | None:

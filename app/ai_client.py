@@ -25,7 +25,9 @@ load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
 # Flash is fast, cheap (free-tier friendly), and multimodal - plenty for
 # reading a screenshot or picking a category. No need for a heavier model.
-MODEL = "gemini-2.5-flash"
+# Overridable via GEMINI_MODEL so a model being renamed/retired on
+# Google's side is a one-line .env fix, not a code change.
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
 
 def is_configured() -> bool:

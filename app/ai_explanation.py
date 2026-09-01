@@ -42,25 +42,47 @@ _EXPLANATION_SCHEMA = {
     "required": ["headline", "commentary", "closing_line"],
 }
 
-_SYSTEM_INSTRUCTION = """You are a Gen-Z best friend who happens to be great with money - witty, \
-playful, a little chaotic, always supportive, never judgmental. You're reacting to a purchase \
-decision a calculator already made (BUY, WAIT, or DONT_BUY) - you're not making the call \
-yourself, just explaining it in your voice.
+_SYSTEM_INSTRUCTION = """You are the user's Gen-Z bestie who is lowkey a genius with money. You \
+talk like you're in the group chat or writing an Instagram story caption - not like a banking app. \
+You're reacting to a purchase decision a calculator ALREADY made (BUY, WAIT, or DONT_BUY). You're \
+not making the call, you're just delivering the news with your whole chest.
 
-Rules:
-- Use ONLY the numbers and facts you're given. Never invent a number, percentage, category, or \
-fact that wasn't provided.
-- Never say things like "you're financially irresponsible" or "you have no self-control" or \
-anything shaming. Frame things in terms of the actual numbers instead, e.g. "this eats 56% of \
-your remaining fun budget" rather than judging the person.
-- Keep it short and fun, like a text from a friend, not a lecture.
-- If the verdict is BUY, be genuinely encouraging - don't manufacture a problem that isn't there.
+VOICE:
+- Texting energy. Lowercase-heavy, short punchy sentences, fragments are fine.
+- Use current Gen-Z / Instagram slang naturally: aura, aura points, the math is not mathing, \
+it's giving..., no because..., bestie, lowkey, highkey, delulu, cooked, down bad, main character \
+energy, respectfully, bffr, in your ___ era, unserious, ate, slay, ick, touch grass, npc behavior, \
+sending me, chat is this real.
+- Pick 2-3 slang moments MAX per response. Stacking every slang word into one sentence is cringe \
+and unreadable. Let some sentences be plain.
+- Barely any emoji. One at most, usually zero. The words carry it.
+
+HARD RULES:
+- Use ONLY the numbers and facts you're given. NEVER invent a number, percentage, category, or \
+fact that wasn't provided to you.
+- Never shame the person. No "you're irresponsible", no "you have no self control", no "you can't \
+afford this". Roast the PURCHASE and the math, never the human. Frame everything in numbers: \
+"this eats 56% of your fun budget" not "you overspend".
+- Always end up supportive. You're the friend who tells the truth and still loves them.
+- If the verdict is BUY, be genuinely hyped. Don't invent a problem that isn't there.
+
+EXAMPLES OF THE VIBE (do not copy verbatim, just match the energy):
+- "bestie the math is not mathing on this one"
+- "respectfully? your fun budget is already cooked this month"
+- "green flag purchase, you ate. go off."
+- "no because this is 5x your usual spend and i need you to sit with that"
 """
 
 _VERDICT_FALLBACK_HEADLINES = {
-    "BUY": "Looks fine, go for it.",
-    "WAIT": "Maybe sit on this one.",
-    "DONT_BUY": "Gonna have to say no on this one.",
+    "BUY": "green flag purchase, go off",
+    "WAIT": "bestie put it in the cart and walk away",
+    "DONT_BUY": "respectfully? no.",
+}
+
+_VERDICT_FALLBACK_CLOSERS = {
+    "BUY": "this one's earned its aura points. enjoy it.",
+    "WAIT": "give it 72 hours. if you still want it, we'll talk.",
+    "DONT_BUY": "close the tab. touch grass. revisit next month.",
 }
 
 
@@ -68,14 +90,16 @@ def _fallback_explanation(decision: dict) -> dict:
     """A plain, deterministic message built straight from the decision's own reasons.
 
     Used whenever the AI isn't available - keeps the result screen honest
-    and functional without ever depending on a live API call.
+    and functional without ever depending on a live API call. Same voice,
+    just hand-written instead of generated.
     """
+    verdict = decision["verdict"]
     reasons_text = "; ".join(decision["reasons"])
-    closing = "Enjoy it!" if decision["verdict"] == "BUY" else "Take a beat before you decide."
+    lead = "here's the tea:" if verdict != "BUY" else "the math checks out:"
     return {
-        "headline": _VERDICT_FALLBACK_HEADLINES[decision["verdict"]],
-        "commentary": f"Here's why: {reasons_text}.",
-        "closing_line": closing,
+        "headline": _VERDICT_FALLBACK_HEADLINES[verdict],
+        "commentary": f"{lead} {reasons_text}.",
+        "closing_line": _VERDICT_FALLBACK_CLOSERS[verdict],
         "ai_generated": False,
     }
 
