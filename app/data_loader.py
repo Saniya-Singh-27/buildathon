@@ -1,21 +1,22 @@
 """
-Loads the synthetic transaction history and exposes a few basic,
-transparent calculations on top of it (totals, category breakdown,
-current-month spend). This is intentionally simple - it is not the
-spending analyzer (remaining budget, deviation, duplicate detection)
-that comes in Phase 3.
-"""
+Loads the transaction history and exposes a few basic, transparent
+calculations on top of it (totals, category breakdown, current-month
+spend). This is intentionally simple - it is not the spending analyzer
+(remaining budget, deviation, duplicate detection) that comes in
+Phase 3.
 
-from pathlib import Path
+Since Phase 7 the history lives in SQLite rather than the CSV; the CSV
+is only the one-time seed. Everything downstream still gets the same
+DataFrame shape it always did.
+"""
 
 import pandas as pd
 
-TRANSACTIONS_PATH = Path(__file__).resolve().parent.parent / "data" / "transactions.csv"
+import database
 
 
-def load_transactions(path: Path = TRANSACTIONS_PATH) -> pd.DataFrame:
-    df = pd.read_csv(path)
-    df["date"] = pd.to_datetime(df["date"])
+def load_transactions() -> pd.DataFrame:
+    df = database.load_transactions()
     return df.sort_values("date").reset_index(drop=True)
 
 

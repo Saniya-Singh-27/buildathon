@@ -1,12 +1,13 @@
 """
 Should I Buy This? - Streamlit app entrypoint.
 
-Phase 6 scope: the result screen now shows a real verdict. Product
-input (screenshot or manual, Phase 5) feeds the Spending Analyzer
-(Phase 3), which feeds the Decision Engine (Phase 4) for a plain,
-explainable BUY/WAIT/DONT_BUY - the AI (Phase 6) only narrates that
-already-made decision in a Gen-Z voice, using nothing but the numbers
-the app calculated. No persistence or payment flow yet (Phase 7/8).
+Phase 7 scope: everything is now persisted in SQLite. Product input
+(screenshot or manual, Phase 5) feeds the Spending Analyzer (Phase 3),
+which feeds the Decision Engine (Phase 4) for a plain, explainable
+BUY/WAIT/DONT_BUY - the AI (Phase 6) only narrates that already-made
+decision, using nothing but the numbers the app calculated. Each
+verdict and the user's response to it is written to the database and
+survives a restart. Payment flow still to come (Phase 8).
 """
 
 import sys
@@ -14,6 +15,7 @@ from pathlib import Path
 
 import streamlit as st
 
+import database
 from ai_client import is_configured
 from ai_explanation import explain
 from data_loader import load_transactions, summary
@@ -30,10 +32,13 @@ from config import (  # noqa: E402
     ESSENTIAL_CATEGORIES,
     MONTHLY_BUDGET,
     RECENT_WINDOW_DAYS,
+    USER_NAME,
 )
 
 st.set_page_config(page_title="Should I Buy This?", page_icon="💸", layout="centered")
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
+
+database.init_db(USER_NAME, MONTHLY_BUDGET, DISCRETIONARY_BUDGET)
 
 CATEGORY_PLACEHOLDER = "-- pick one --"
 CATEGORY_OPTIONS = [CATEGORY_PLACEHOLDER] + CATEGORY_LIST
@@ -49,13 +54,46 @@ DEFAULTS = {
     "category_input": CATEGORY_PLACEHOLDER,
     "discount_input": 0.0,
     "screenshot_message": None,
+    # Filled in once, when JUDGE ME is pressed - see judge_purchase().
+    "decision": None,
+    "explanation": None,
+    "purchase_check_id": None,
+    "user_decision": None,
 }
 for key, value in DEFAULTS.items():
     if key not in st.session_state:
         st.session_state[key] = value
 
 
-def go_to_result():
+def judge_purchase(product_name: str, price: float, category: str, discount: float):
+    """Run the full pipeline once and persist the verdict.
+
+    Deliberately done here rather than in render_result(): Streamlit
+    re-runs the whole script on every interaction, so analyzing and
+    calling the AI from the render function meant a fresh Gemini call
+    (and a duplicate database row) every time any button was clicked.
+    """
+    df = load_transactions()
+    analysis = analyze_purchase(
+        df,
+        category=category,
+        purchase_price=price,
+        monthly_budget=MONTHLY_BUDGET,
+        discretionary_budget=DISCRETIONARY_BUDGET,
+        essential_categories=ESSENTIAL_CATEGORIES,
+        recent_window_days=RECENT_WINDOW_DAYS,
+        product_name=product_name,
+    )
+    decision = decide(analysis)
+
+    st.session_state.product_name = product_name
+    st.session_state.price = price
+    st.session_state.category = category
+    st.session_state.discount_percentage = discount
+    st.session_state.decision = decision
+    st.session_state.explanation = explain(decision)
+    st.session_state.purchase_check_id = database.save_purchase_check(decision)
+    st.session_state.user_decision = None
     st.session_state.page = "result"
 
 
@@ -80,11 +118,11 @@ def _analyze_screenshot():
         )
         return
 
-    result = extract_from_screenshot(uploaded.getvalue(), uploaded.type or "image/png")
+    result, error = extract_from_screenshot(uploaded.getvalue(), uploaded.type or "image/png")
     if result is None:
         st.session_state.screenshot_message = (
             "warning",
-            "Couldn't confidently read that screenshot - enter the details manually below.",
+            f"Couldn't read that screenshot - enter the details manually below.\n\nReason: {error}",
         )
         return
 
@@ -106,16 +144,21 @@ def render_home():
         unsafe_allow_html=True,
     )
 
-    try:
-        df = load_transactions()
+    df = load_transactions()
+    if df.empty:
+        st.warning(
+            "No transaction history in the database yet. "
+            "Run `python3 data/generate_data.py` and restart the app to seed it."
+        )
+    else:
         stats = summary(df)
+        checks_run = len(database.get_purchase_checks())
         st.caption(
             f"Data check: {stats['transaction_count']} transactions loaded • "
             f"Rs {stats['total_spent']:,.0f} total spend • "
-            f"Rs {stats['current_month_spend']:,.0f} spent this month"
+            f"Rs {stats['current_month_spend']:,.0f} spent this month • "
+            f"{checks_run} past verdicts saved"
         )
-    except FileNotFoundError:
-        st.warning("No transaction data found. Run `python3 data/generate_data.py` first.")
 
     with st.container(border=True):
         st.markdown("**Upload what you're about to buy**")
@@ -162,18 +205,20 @@ def render_home():
             elif price <= 0:
                 st.warning("That price can't be real. Try again.")
             else:
+                category_error = None
                 if category == CATEGORY_PLACEHOLDER:
-                    guessed = categorize_product(product_name)
-                    category = guessed
+                    category, category_error = categorize_product(product_name)
 
                 if category not in CATEGORY_LIST:
-                    st.warning("Couldn't guess a category automatically - please pick one from the list.")
+                    st.warning(
+                        "Couldn't guess a category automatically - please pick one from the list."
+                        + (f"\n\nReason: {category_error}" if category_error else "")
+                    )
                 else:
-                    st.session_state.product_name = product_name
-                    st.session_state.price = price
-                    st.session_state.category = category
-                    st.session_state.discount_percentage = st.session_state.discount_input
-                    go_to_result()
+                    with st.spinner("crunching your spending history..."):
+                        judge_purchase(
+                            product_name, price, category, st.session_state.discount_input
+                        )
                     st.rerun()
 
 
@@ -184,20 +229,20 @@ _VERDICT_DISPLAY = {
 }
 
 
+def _record_decision(user_decision: str):
+    """Persist what the user chose to do about the verdict."""
+    if st.session_state.purchase_check_id is not None:
+        database.record_user_decision(st.session_state.purchase_check_id, user_decision)
+    st.session_state.user_decision = user_decision
+
+
 def render_result():
-    df = load_transactions()
-    analysis = analyze_purchase(
-        df,
-        category=st.session_state.category,
-        purchase_price=st.session_state.price,
-        monthly_budget=MONTHLY_BUDGET,
-        discretionary_budget=DISCRETIONARY_BUDGET,
-        essential_categories=ESSENTIAL_CATEGORIES,
-        recent_window_days=RECENT_WINDOW_DAYS,
-        product_name=st.session_state.product_name,
-    )
-    decision = decide(analysis)
-    explanation = explain(decision)
+    decision = st.session_state.decision
+    explanation = st.session_state.explanation
+    if decision is None or explanation is None:
+        st.warning("Nothing to show yet - judge something first.")
+        st.button("← Back", on_click=go_home)
+        return
 
     banner_class, banner_icon, banner_label = _VERDICT_DISPLAY[decision["verdict"]]
 
@@ -234,11 +279,26 @@ def render_result():
 
     col1, col2 = st.columns(2)
     with col1:
-        st.button("WAIT 72 HOURS", use_container_width=True, disabled=True)
+        st.button(
+            "WAIT 72 HOURS",
+            use_container_width=True,
+            on_click=_record_decision,
+            args=("waited",),
+        )
     with col2:
-        st.button("BUY ANYWAY 💀", use_container_width=True, disabled=True)
-    st.caption("These buttons are disabled for now - saving your decision arrives in a later phase.")
+        st.button(
+            "BUY ANYWAY 💀",
+            use_container_width=True,
+            on_click=_record_decision,
+            args=("bought_anyway",),
+        )
 
+    if st.session_state.user_decision == "waited":
+        st.success("logged it. we'll see if you still want it in 72 hours.")
+    elif st.session_state.user_decision == "bought_anyway":
+        st.info("noted, no judgement. test checkout gets wired up in the next phase.")
+
+    st.caption(f"Saved to your history as check #{st.session_state.purchase_check_id}.")
     st.button("← Judge something else", on_click=go_home)
 
 
