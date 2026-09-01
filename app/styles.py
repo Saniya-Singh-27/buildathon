@@ -4,6 +4,20 @@ Theme is forced to dark via .streamlit/config.toml so rendering is
 consistent regardless of the viewer's OS/browser preference. Every
 custom element below sets its own `color` explicitly rather than
 inheriting - that's what caused invisible white-on-white text before.
+
+Palette (all five, by the job each one is suited to - contrast measured
+against the #2a0812 card surface, not eyeballed):
+
+    Crushed Berry  #880d1e  1.86:1  too dark to be ink, so it anchors the
+                                    background family instead; the surfaces
+                                    here are darkened steps of it, since the
+                                    raw hue is far too saturated for a large
+                                    fill
+    Raspberry      #dd2d4a  3.98:1  primary actions - buttons, focus
+    Bubblegum Pink #f26a8d  6.32:1  accents, borders, headlines
+    Pink Mist      #f49cbb  9.04:1  secondary text and captions
+    Light Cyan     #cbeef3 14.94:1  primary ink - the one cool colour, and
+                                    the only one with real text contrast
 """
 
 CUSTOM_CSS = """
@@ -11,7 +25,7 @@ CUSTOM_CSS = """
     #MainMenu, footer, header {visibility: hidden;}
 
     .stApp {
-        background: linear-gradient(160deg, #120c1e 0%, #1a1030 50%, #0f1a2e 100%);
+        background: linear-gradient(160deg, #14040a 0%, #260812 50%, #1a0509 100%);
     }
 
     /* Headings and body text are set explicitly rather than left to the
@@ -22,11 +36,11 @@ CUSTOM_CSS = """
        a near-black background. Same lesson as the original invisible-text
        bug: never let a colour depend on inheritance we don't control. */
     h1, h2, h3, h4, h5, h6 {
-        color: #f2ecff !important;
+        color: #cbeef3 !important;
     }
 
     .stApp, .stApp p, .stApp li, .stApp span, .stMarkdown {
-        color: #f2ecff;
+        color: #cbeef3;
     }
 
     .block-container {
@@ -39,14 +53,14 @@ CUSTOM_CSS = """
         font-weight: 800;
         text-align: center;
         margin-bottom: 0;
-        background: linear-gradient(90deg, #ff4d8d, #a855f7);
+        background: linear-gradient(90deg, #dd2d4a, #f26a8d);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
         text-align: center;
-        color: #b9aed6;
+        color: #f49cbb;
         font-size: 1.05rem;
         margin-top: 0.3rem;
         margin-bottom: 2rem;
@@ -62,19 +76,19 @@ CUSTOM_CSS = """
        "st-emotion-cache-0" no-op class, so it's excluded here to avoid
        wrapping the entire page in a card. */
     div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) {
-        background: #1e1631;
-        border: 1px solid rgba(255, 77, 141, 0.18) !important;
+        background: #2a0812;
+        border: 1px solid rgba(242, 106, 141, 0.22) !important;
         border-radius: 18px;
         padding: 0.4rem 0.6rem;
-        box-shadow: 0 8px 24px rgba(168, 85, 247, 0.18);
+        box-shadow: 0 8px 24px rgba(136, 13, 30, 0.45);
         margin-bottom: 1.2rem;
-        color: #f2ecff;
+        color: #cbeef3;
     }
 
     div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) strong,
     div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) p,
     div[data-testid="stVerticalBlockBorderWrapper"]:not(.st-emotion-cache-0) label {
-        color: #f2ecff;
+        color: #cbeef3;
     }
 
     /* Inputs sit inside cards that share their background colour, so
@@ -82,14 +96,14 @@ CUSTOM_CSS = """
     [data-testid="stTextInput"] > div,
     [data-testid="stNumberInput"] > div,
     [data-testid="stSelectbox"] > div {
-        background: #171029 !important;
+        background: #1e050c !important;
         border: 1px solid rgba(255, 255, 255, 0.14) !important;
         border-radius: 10px;
     }
 
     .or-divider {
         text-align: center;
-        color: #8f7fb8;
+        color: #d07f96;
         font-weight: 700;
         margin: 1.2rem 0;
         letter-spacing: 2px;
@@ -100,19 +114,19 @@ CUSTOM_CSS = """
         font-weight: 700;
         padding: 0.6rem 1.4rem;
         border: 1px solid rgba(255, 255, 255, 0.12);
-        color: #f2ecff;
-        background: #2a2140;
+        color: #cbeef3;
+        background: #3a1020;
     }
 
     div.stButton > button[kind="primary"] {
-        background: linear-gradient(90deg, #ff4d8d, #a855f7);
+        background: linear-gradient(90deg, #dd2d4a, #f26a8d);
         color: white;
         border: none;
     }
 
     div.stButton > button:disabled {
-        color: #8f7fb8;
-        background: #201936;
+        color: #d07f96;
+        background: #240a14;
         border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
@@ -134,25 +148,25 @@ CUSTOM_CSS = """
         text-align: center;
         font-size: 2.2rem;
         font-weight: 800;
-        color: #f2ecff;
+        color: #cbeef3;
         margin-bottom: 1rem;
     }
 
     .reason-item {
         font-size: 1.02rem;
         padding: 0.4rem 0;
-        color: #ded4f5;
+        color: #e3f4f7;
     }
 
     .bestie-note {
-        background: #2a1a2e;
-        border-left: 4px solid #ff4d8d;
+        background: #33101c;
+        border-left: 4px solid #dd2d4a;
         border-radius: 10px;
         padding: 1rem 1.2rem;
         font-style: italic;
         font-size: 1.05rem;
         margin: 1rem 0 1.4rem 0;
-        color: #f5d9ea;
+        color: #f49cbb;
     }
 
     /* --- charts -------------------------------------------------------
@@ -172,7 +186,7 @@ CUSTOM_CSS = """
     }
 
     .viz-label {
-        color: #ded4f5;
+        color: #e3f4f7;
         font-size: 0.92rem;
         text-align: right;
         white-space: nowrap;
@@ -193,7 +207,7 @@ CUSTOM_CSS = """
     }
 
     .viz-value {
-        color: #f2ecff;
+        color: #cbeef3;
         font-size: 0.88rem;
         font-variant-numeric: tabular-nums;
         white-space: nowrap;
@@ -208,14 +222,14 @@ CUSTOM_CSS = """
     }
 
     .stat-tile {
-        background: #1e1631;
-        border: 1px solid rgba(255, 77, 141, 0.18);
+        background: #2a0812;
+        border: 1px solid rgba(242, 106, 141, 0.22);
         border-radius: 14px;
         padding: 0.9rem 1rem;
     }
 
     .stat-label {
-        color: #9c8fbf;
+        color: #e0899f;
         font-size: 0.78rem;
         font-weight: 700;
         letter-spacing: 0.3px;
@@ -223,23 +237,23 @@ CUSTOM_CSS = """
     }
 
     .stat-value {
-        color: #f2ecff;
+        color: #cbeef3;
         font-size: 1.5rem;
         font-weight: 800;
         margin-top: 0.2rem;
     }
 
     .stat-note {
-        color: #8f7fb8;
+        color: #d07f96;
         font-size: 0.76rem;
         margin-top: 0.15rem;
     }
 
     .test-badge {
         display: inline-block;
-        background: #3b1650;
-        color: #ffd166;
-        border: 1px solid rgba(255, 209, 102, 0.4);
+        background: #3d0a18;
+        color: #fab219;
+        border: 1px solid rgba(250, 178, 25, 0.45);
         font-size: 0.72rem;
         font-weight: 800;
         letter-spacing: 0.5px;
@@ -252,17 +266,17 @@ CUSTOM_CSS = """
         text-align: center;
         font-size: 1.3rem;
         font-weight: 800;
-        color: #ff9ec7;
+        color: #f26a8d;
         margin-bottom: 1rem;
     }
 
     [data-testid="stFileUploaderDropzone"] {
-        background: #1e1631;
-        border: 1px dashed rgba(255, 77, 141, 0.35);
+        background: #2a0812;
+        border: 1px dashed rgba(242, 106, 141, 0.40);
     }
 
     [data-testid="stCaptionContainer"], .stCaption, small {
-        color: #9c8fbf !important;
+        color: #e0899f !important;
     }
 </style>
 """

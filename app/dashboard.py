@@ -15,9 +15,9 @@ Colour decisions, deliberately (and validated, not eyeballed):
 - Category spend is a nominal breakdown, so every bar is ONE hue rather
   than a darker-where-bigger ramp. A value-ramp on unordered categories
   double-encodes bar length as colour and burns the only free channel on
-  information the chart already shows. The hue (#ec4899) was checked
-  against this app's actual card surface for the lightness band, chroma
-  floor and 3:1 contrast.
+  information the chart already shows. The hue was checked against this
+  app's actual card surface for contrast, and against the status red
+  used directly below it - see BAR_HUE.
 - The verdict breakdown is status data, so it uses fixed good/warning/
   critical colours. Red and green are ~4 Delta E apart under deuteranopia -
   effectively identical for a red-green colourblind reader - so every bar
@@ -36,7 +36,16 @@ import database
 from data_loader import load_transactions, spend_by_category, total_spent
 from spending_analyzer import remaining_discretionary_budget
 
-BAR_HUE = "#ec4899"
+# Bubblegum Pink. Chosen over Raspberry (#dd2d4a) despite Raspberry passing every
+# check on its own, because Raspberry sits ~3.5 Delta E from the status "critical"
+# red used by the DON'T BUY bar directly below - the same page would have had
+# category bars and a status signal in indistinguishable colours, which drains the
+# meaning out of the status one. This palette is entirely warm reds and pinks, so
+# nothing in it is both dark enough for the dark-mode mark band AND clearly apart
+# from a warm status red; separation from the status colour is the more
+# consequential constraint, so it wins. Contrast is 6.32:1 (well over the 3:1
+# requirement) and every bar is direct-labelled, so no value depends on the hue.
+BAR_HUE = "#f26a8d"
 
 # Fixed status palette - never themed, never reused for a non-status series.
 STATUS_COLORS = {
