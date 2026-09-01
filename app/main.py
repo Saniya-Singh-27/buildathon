@@ -1,13 +1,12 @@
 """
 Should I Buy This? - Streamlit app entrypoint.
 
-Phase 5 scope: real product input. A screenshot can be read by the AI
-(Gemini vision) to pre-fill product name / price / category / discount,
-or the user can type them in directly; either way they land in the same
-form fields, with category auto-guessed by the AI when possible and a
-manual dropdown as the fallback. There is still no spending analysis or
-verdict shown yet - the result screen remains a placeholder until
-Phase 6 wires in the decision engine and AI explanation.
+Phase 6 scope: the result screen now shows a real verdict. Product
+input (screenshot or manual, Phase 5) feeds the Spending Analyzer
+(Phase 3), which feeds the Decision Engine (Phase 4) for a plain,
+explainable BUY/WAIT/DONT_BUY - the AI (Phase 6) only narrates that
+already-made decision in a Gen-Z voice, using nothing but the numbers
+the app calculated. No persistence or payment flow yet (Phase 7/8).
 """
 
 import sys
@@ -15,13 +14,23 @@ from pathlib import Path
 
 import streamlit as st
 
-from data_loader import load_transactions, summary
 from ai_client import is_configured
+from ai_explanation import explain
+from data_loader import load_transactions, summary
+from decision_engine import decide
 from product_understanding import categorize_product, extract_from_screenshot
+from spending_analyzer import analyze_purchase
 from styles import CUSTOM_CSS
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "data"))
-from config import CATEGORY_LABELS, CATEGORY_LIST  # noqa: E402
+from config import (  # noqa: E402
+    CATEGORY_LABELS,
+    CATEGORY_LIST,
+    DISCRETIONARY_BUDGET,
+    ESSENTIAL_CATEGORIES,
+    MONTHLY_BUDGET,
+    RECENT_WINDOW_DAYS,
+)
 
 st.set_page_config(page_title="Should I Buy This?", page_icon="💸", layout="centered")
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
@@ -168,14 +177,35 @@ def render_home():
                     st.rerun()
 
 
+_VERDICT_DISPLAY = {
+    "BUY": ("verdict-buy", "🟢", "BUY"),
+    "WAIT": ("verdict-wait", "🟡", "WAIT"),
+    "DONT_BUY": ("verdict-dontbuy", "🔴", "DON'T BUY"),
+}
+
+
 def render_result():
-    st.markdown(
-        '<span class="placeholder-tag">PLACEHOLDER VERDICT - not calculated yet</span>',
-        unsafe_allow_html=True,
+    df = load_transactions()
+    analysis = analyze_purchase(
+        df,
+        category=st.session_state.category,
+        purchase_price=st.session_state.price,
+        monthly_budget=MONTHLY_BUDGET,
+        discretionary_budget=DISCRETIONARY_BUDGET,
+        essential_categories=ESSENTIAL_CATEGORIES,
+        recent_window_days=RECENT_WINDOW_DAYS,
+        product_name=st.session_state.product_name,
     )
+    decision = decide(analysis)
+    explanation = explain(decision)
+
+    banner_class, banner_icon, banner_label = _VERDICT_DISPLAY[decision["verdict"]]
+
+    if not explanation.get("ai_generated"):
+        st.caption("AI commentary is running on a plain fallback right now (not talking to Gemini).")
 
     st.markdown(
-        '<div class="verdict-banner verdict-wait">🟡 WAIT</div>',
+        f'<div class="verdict-banner {banner_class}">{banner_icon} {banner_label}</div>',
         unsafe_allow_html=True,
     )
 
@@ -189,18 +219,16 @@ def render_result():
     discount_text = f" • {discount:.0f}% off" if discount else ""
     st.caption(f"Category: {category_label}{discount_text}")
 
+    st.markdown(f'<div class="ai-headline">{explanation["headline"]}</div>', unsafe_allow_html=True)
+
     with st.container(border=True):
-        st.markdown("**Why I'm saying this (placeholder reasons):**")
-        for reason in [
-            "This is dummy data - the real spending analysis isn't built yet",
-            "Category and price are now captured for real (Phase 5) - the verdict logic isn't",
-            "The verdict logic (BUY / WAIT / DON'T BUY) arrives in Phase 4/6 wiring",
-        ]:
+        st.markdown("**Why I'm saying this:**")
+        for reason in decision["reasons"]:
             st.markdown(f'<div class="reason-item">• {reason}</div>', unsafe_allow_html=True)
 
     st.markdown(
-        '<div class="bestie-note">"Not gonna lie, I\'m just a placeholder right now. '
-        'Come back after Phase 6 for the real commentary."</div>',
+        f'<div class="bestie-note">"{explanation["commentary"]}"<br><br>'
+        f'<strong>My move:</strong> {explanation["closing_line"]}</div>',
         unsafe_allow_html=True,
     )
 
@@ -209,7 +237,7 @@ def render_result():
         st.button("WAIT 72 HOURS", use_container_width=True, disabled=True)
     with col2:
         st.button("BUY ANYWAY 💀", use_container_width=True, disabled=True)
-    st.caption("These buttons are disabled for now - they'll do something in a later phase.")
+    st.caption("These buttons are disabled for now - saving your decision arrives in a later phase.")
 
     st.button("← Judge something else", on_click=go_home)
 

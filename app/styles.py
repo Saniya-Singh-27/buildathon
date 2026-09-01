@@ -130,15 +130,12 @@ CUSTOM_CSS = """
         color: #f5d9ea;
     }
 
-    .placeholder-tag {
-        display: inline-block;
-        background: #3b1650;
-        color: #e6b3ff;
-        font-size: 0.78rem;
-        font-weight: 700;
-        padding: 0.15rem 0.6rem;
-        border-radius: 999px;
-        margin-bottom: 0.8rem;
+    .ai-headline {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #ff9ec7;
+        margin-bottom: 1rem;
     }
 
     [data-testid="stFileUploaderDropzone"] {
